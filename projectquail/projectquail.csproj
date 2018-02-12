@@ -104,6 +104,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="LICENSE" />
     <None Include="projectquail_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
