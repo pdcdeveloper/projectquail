@@ -5,6 +5,7 @@
 client_secret.json
 client_browser_key.json
 *.jpg
+*.png
 
 # User-specific files
 *.suo
