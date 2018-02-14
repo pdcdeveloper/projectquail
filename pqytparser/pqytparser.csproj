@@ -106,8 +106,12 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Models\VideoMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ContentTypeEnum.cs" />
+    <Compile Include="Resources\ItagParsingHelpers.cs" />
+    <Compile Include="Resources\MediaQualityEnum.cs" />
+    <Compile Include="Resources\MimeTypeEnum.cs" />
     <EmbeddedResource Include="Properties\pqytparser.rd.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pqytparser
+namespace pqytparser.Resources
 {
-    public class Class1
+    public static class ItagParsingHelpers
     {
+        //todo
     }
 }
