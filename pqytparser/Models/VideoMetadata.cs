@@ -1,9 +1,5 @@
 ﻿using pqytparser.Resources;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace pqytparser.Models
 {
@@ -13,8 +9,19 @@ namespace pqytparser.Models
         public string DownloadUrl { get; }
 
         public MediaQualityEnum Quality { get; }
-        public MimeTypeEnum MimeType { get; }
-        public ContentTypeEnum ContentType { get; }
-        //todo
+
+        public FileTypeEnum GetFileType()
+        {
+            if (Quality == MediaQualityEnum.Unknown)
+                return FileTypeEnum.Unknown;
+            //todo
+            foreach (FileTypeEnum ft in Enum.GetValues(typeof(FileTypeEnum)))
+                ;
+            return FileTypeEnum.Unknown;
+        }
+
+
+        //public FileTypeEnum FileExt { get; }
+        //public MimeTypeEnum MimeType { get; }
     }
 }
