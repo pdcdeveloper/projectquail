@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace pqlib.Reflection.Attributes
 {
     /// <summary>
-    /// The methods in this class can be used to retrieve the attributes
+    /// The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
     /// </summary>
     /// <remarks>
     /// Assigning default values to generic types:
