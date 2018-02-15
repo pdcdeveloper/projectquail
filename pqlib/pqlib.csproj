@@ -107,6 +107,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\Attributes\AttributeHelper.cs" />
+    <Compile Include="Reflection\Attributes\DisplayAttributeExtension.cs" />
     <EmbeddedResource Include="Properties\pqlib.rd.xml" />
   </ItemGroup>
   <ItemGroup>
