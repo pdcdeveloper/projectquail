@@ -2,7 +2,7 @@
 
 namespace pqytparser.Resources
 {
-    // The members of this enumeration also contain within its DisplayAttribute.ShortName its corresponding file extension.
+    // The members of this enumeration also contain within its 'DisplayAttribute.ShortName' its corresponding file extension.
     // List of MIME types from Mozilla (use as guidance for creating custom MIME types):
     //   https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
     public enum FileTypeEnum : int
