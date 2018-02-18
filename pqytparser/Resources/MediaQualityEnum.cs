@@ -2,15 +2,11 @@
 
 namespace pqytparser.Resources
 {
-    /// <summary>
-    /// This enumeration is based on YouTube's itag parameter.  The integral value of each enum member is its corresponding itag.
-    /// </summary>
-    /// <remarks>
-    /// DisplayAttribute holds key metadata for each member:
-    ///     Name        = quality (append this to file name before the file extension)
-    ///     ShortName   = file type (file extension)
-    ///     Description = mime type
-    /// </remarks>
+    // This enumeration is based on YouTube's itag parameter.  The integral value of each enum member is its corresponding itag.
+    // DisplayAttribute holds key metadata for each member:
+    //      Name        = quality (append this to file name before the file extension)
+    //      ShortName   = file type (file extension)
+    //      Description = mime type
     public enum MediaQualityEnum
     {
         // Default value to avoid using nullable
