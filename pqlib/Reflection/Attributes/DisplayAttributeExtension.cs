@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace pqlib.Reflection.Attributes
 {
-    // The extension methods from this class is typically used on enum members that use 'DataAnnotations.DisplayAttribute'.
+    // The extension methods from this class are typically used on enum members that use 'DataAnnotations.DisplayAttribute'
+    // and may otherwise be used by any member that is using 'DisplayAttribute'.
     public static class DisplayAttributeExtension
     {
         static AttributeHelper attributeHelper = new AttributeHelper();

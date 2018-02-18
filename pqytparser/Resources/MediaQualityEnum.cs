@@ -7,7 +7,7 @@ namespace pqytparser.Resources
     /// </summary>
     /// <remarks>
     /// DisplayAttribute holds key metadata for each member:
-    ///     Name        = quality (append this to file name before the extension)
+    ///     Name        = quality (append this to file name before the file extension)
     ///     ShortName   = file type (file extension)
     ///     Description = mime type
     /// </remarks>
