@@ -7,13 +7,9 @@ using System.Threading.Tasks;
 
 namespace pqlib.Reflection.Attributes
 {
-    /// <summary>
-    /// The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
-    /// </summary>
-    /// <remarks>
-    /// Assigning default values to generic types:
-    ///     <see cref="https://msdn.microsoft.com/en-us/library/xwth0h0d.aspx"/>
-    /// </remarks>
+    // The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
+    // Assigning default values to generic types:
+    //      https://msdn.microsoft.com/en-us/library/xwth0h0d.aspx
     public class AttributeHelper
     {
         public FieldInfo GetFieldInfo<T>(T member)
