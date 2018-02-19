@@ -106,9 +106,11 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Models\VideoAvailability.cs" />
     <Compile Include="Models\VideoDownloadInfo.cs" />
     <Compile Include="Models\VideoMetadata.cs" />
+    <Compile Include="Parsers\VideoInfoParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\FileExtensions.cs" />
     <Compile Include="Resources\MimeTypeEnum.cs" />
@@ -124,9 +126,7 @@
       <Version>6.0.6</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\pqlib\pqlib.csproj">
       <Project>{d064263d-1601-4b2d-959f-b208dc2167ea}</Project>
