@@ -10,23 +10,16 @@ namespace pqytparser.Models
         public readonly MimeTypeEnum MimeType;
         public readonly string FileExt;
 
-        public string ContentId;
-        public string DownloadUrl;
+        public readonly string DownloadUrl;
 
 
-        public VideoMetadata(MediaQualityEnum quality)
+        public VideoMetadata(MediaQualityEnum quality, string downloadUrl)
         {
             Quality = quality;
             FileExt = Quality.GetShortName();
             MimeType = Quality.GetMimeType();
 
-            ContentId = string.Empty;
-            DownloadUrl = string.Empty;
-        }
-
-        public VideoMetadata(string contentId, MediaQualityEnum quality) : this(quality)
-        {
-            ContentId = contentId;
+            DownloadUrl = downloadUrl;
         }
     }
 
