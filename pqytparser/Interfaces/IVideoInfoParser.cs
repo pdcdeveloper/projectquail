@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace pqytparser.Interfaces
 {
-    public interface IParser
+    public interface IVideoInfoParser
     {
         void SetDesiredMimeTypes(params MimeTypeEnum[] mimeTypes);
         void SetDesiredFileTypes(params FileTypeEnum[] fileTypes);

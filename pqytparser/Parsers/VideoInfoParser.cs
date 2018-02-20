@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace pqytparser.Parsers
 {
-    public class VideoInfoParser : IParser
+    public class VideoInfoParser : IVideoInfoParser
     {
         public Task<VideoDownloadInfo> GetVideoDownloadInfoAsync(string contentId)
         {
