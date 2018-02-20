@@ -11,17 +11,20 @@ namespace pqytparser.Parsers
 {
     public class VideoInfoParser : IVideoInfoParser
     {
+        
+
+
         public Task<VideoDownloadInfo> GetVideoDownloadInfoAsync(string contentId)
         {
             throw new NotImplementedException();
         }
 
-        public void SetDesiredFileTypes(params FileTypeEnum[] fileTypes)
+        public void SuggestFileTypes(params FileTypeEnum[] suggestions)
         {
             throw new NotImplementedException();
         }
 
-        public void SetDesiredMimeTypes(params MimeTypeEnum[] mimeTypes)
+        public void SuggestMimeTypes(params MimeTypeEnum[] suggestions)
         {
             throw new NotImplementedException();
         }

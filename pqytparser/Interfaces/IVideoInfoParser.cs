@@ -6,8 +6,8 @@ namespace pqytparser.Interfaces
 {
     public interface IVideoInfoParser
     {
-        void SetDesiredMimeTypes(params MimeTypeEnum[] mimeTypes);
-        void SetDesiredFileTypes(params FileTypeEnum[] fileTypes);
+        void SuggestFileTypes(params FileTypeEnum[] suggestions);
+        void SuggestMimeTypes(params MimeTypeEnum[] suggestions);
         Task<VideoDownloadInfo> GetVideoDownloadInfoAsync(string contentId);
     }
 }
