@@ -4,9 +4,15 @@ namespace pqytparser.Models
 {
     public struct VideoAvailability
     {
-        public VideoAvailabilityEnum Availability { get; }
+        public readonly VideoAvailabilityEnum Availability;
 
         // When 'Availability' is not set as 'VideoAvailabilityEnum.Available', check this for more details.
-        public string ErrorMessage { get; }
+        public readonly string ErrorMessage;
+
+        public VideoAvailability(VideoAvailabilityEnum availability, string errorMessage)
+        {
+            Availability = availability;
+            ErrorMessage = errorMessage;
+        }
     }
 }
