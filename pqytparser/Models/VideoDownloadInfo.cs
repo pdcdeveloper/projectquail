@@ -1,16 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using pqytparser.Resources;
+using System.Collections.Generic;
 
 namespace pqytparser.Models
 {
-    public class VideoDownloadInfo
+    public struct VideoDownloadInfo
     {
-        public VideoAvailability Availability { get; }
-        public IList<VideoMetadata> Videos { get; }
-        public string ContentId { get; }
+        public readonly string ContentId;
 
-        public VideoDownloadInfo(string contentId)
+        public readonly VideoAvailability ParserResult;
+        public readonly List<VideoMetadata> Videos;
+
+        public VideoDownloadInfo(string contentId, VideoAvailability parserResult, List<VideoMetadata> videos)
         {
             ContentId = contentId;
+            ParserResult = parserResult;
+            Videos = ParserResult.Availability == VideoAvailabilityEnum.Available ? new List<VideoMetadata>(videos) : null;
         }
     }
 }
