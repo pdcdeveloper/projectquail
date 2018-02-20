@@ -11,10 +11,12 @@ namespace pqytparser.Parsers
 {
     public class VideoInfoParser : IVideoInfoParser
     {
-        
+        const string VideoInfoBaseUrl = "https://www.youtube.com/get_video_info?video_id=";
 
 
-        public Task<VideoDownloadInfo> GetVideoDownloadInfoAsync(string contentId)
+
+
+        public Task<VideoDownloadInfo> GetContentUriAsync(string contentId)
         {
             throw new NotImplementedException();
         }

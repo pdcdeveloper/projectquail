@@ -8,6 +8,6 @@ namespace pqytparser.Interfaces
     {
         void SuggestFileTypes(params FileTypeEnum[] suggestions);
         void SuggestMimeTypes(params MimeTypeEnum[] suggestions);
-        Task<VideoDownloadInfo> GetVideoDownloadInfoAsync(string contentId);
+        Task<VideoDownloadInfo> GetContentUriAsync(string contentId);
     }
 }
