@@ -107,6 +107,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IVideoInfoParser.cs" />
+    <Compile Include="Interfaces\IVideoInfoService.cs" />
     <Compile Include="Models\VideoAvailability.cs" />
     <Compile Include="Models\VideoDownloadInfo.cs" />
     <Compile Include="Models\VideoMetadata.cs" />
