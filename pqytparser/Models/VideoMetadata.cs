@@ -8,6 +8,7 @@ namespace pqytparser.Models
     {
         public readonly MediaQualityEnum Quality;
         public readonly MimeTypeEnum MimeType;
+        public readonly FileTypeEnum FileType;
         public readonly string FileExt;
 
         public readonly string DownloadUrl;
@@ -16,8 +17,9 @@ namespace pqytparser.Models
         public VideoMetadata(MediaQualityEnum quality, string downloadUrl)
         {
             Quality = quality;
-            FileExt = Quality.GetShortName();
             MimeType = Quality.GetMimeType();
+            FileType = Quality.GetFileType();
+            FileExt = Quality.GetShortName();
 
             DownloadUrl = downloadUrl;
         }
