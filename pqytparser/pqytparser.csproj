@@ -110,7 +110,7 @@
     <Compile Include="Models\VideoAvailability.cs" />
     <Compile Include="Models\VideoDownloadInfo.cs" />
     <Compile Include="Models\VideoMetadata.cs" />
-    <Compile Include="Parsers\VideoInfoParser.cs" />
+    <Compile Include="ViewModels\VideoInfoParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\FileExtensions.cs" />
     <Compile Include="Resources\MimeTypeEnum.cs" />

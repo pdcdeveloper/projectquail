@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pqytparser.Parsers
+namespace pqytparser.ViewModels
 {
     public class VideoInfoParser : IVideoInfoParser
     {
