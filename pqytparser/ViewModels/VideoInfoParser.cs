@@ -13,22 +13,57 @@ namespace pqytparser.ViewModels
     {
         const string VideoInfoBaseUrl = "https://www.youtube.com/get_video_info?video_id=";
 
+        List<FileTypeEnum> fileTypes = new List<FileTypeEnum>();
+        List<MimeTypeEnum> mimeTypes = new List<MimeTypeEnum>();
 
 
-
-        public Task<VideoDownloadInfo> GetContentUriAsync(string contentId)
+        public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(contentId))
+                return new VideoDownloadInfo(string.Empty, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
+
+
         }
+
 
         public void SuggestFileTypes(params FileTypeEnum[] suggestions)
         {
-            throw new NotImplementedException();
+            if ((suggestions?.Count() ?? 0) < 1
+                || suggestions.Contains(FileTypeEnum.Unknown))
+            {
+                UseDefault();
+                return;
+            }
+
+
+
+            void UseDefault()
+            {
+                fileTypes.Clear();
+                fileTypes.Add(FileTypeEnum.Mp4);
+                fileTypes.Add(FileTypeEnum.Webm);
+                fileTypes.Add(FileTypeEnum.M4a);
+            }
         }
+
 
         public void SuggestMimeTypes(params MimeTypeEnum[] suggestions)
         {
-            throw new NotImplementedException();
+            if ((suggestions?.Count() ?? 0) < 1
+                || suggestions.Contains(MimeTypeEnum.Unknown))
+            {
+                UseDefault();
+                return;
+            }
+
+
+
+            void UseDefault()
+            {
+                mimeTypes.Clear();
+                mimeTypes.Add(MimeTypeEnum.Audio);
+                mimeTypes.Add(MimeTypeEnum.MuxedAudioVideo);
+            }
         }
     }
 
