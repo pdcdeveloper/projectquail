@@ -13,57 +13,28 @@ namespace pqytparser.ViewModels
     {
         const string VideoInfoBaseUrl = "https://www.youtube.com/get_video_info?video_id=";
 
-        List<FileTypeEnum> fileTypes = new List<FileTypeEnum>();
-        List<MimeTypeEnum> mimeTypes = new List<MimeTypeEnum>();
-
-
-        public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId)
+        public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes)
         {
             if (string.IsNullOrEmpty(contentId))
                 return new VideoDownloadInfo(string.Empty, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
 
-
-        }
-
-
-        public void SuggestFileTypes(params FileTypeEnum[] suggestions)
-        {
-            if ((suggestions?.Count() ?? 0) < 1
-                || suggestions.Contains(FileTypeEnum.Unknown))
-            {
-                UseDefault();
-                return;
-            }
-
-
-
-            void UseDefault()
-            {
-                fileTypes.Clear();
-                fileTypes.Add(FileTypeEnum.Mp4);
-                fileTypes.Add(FileTypeEnum.Webm);
-                fileTypes.Add(FileTypeEnum.M4a);
-            }
-        }
-
-
-        public void SuggestMimeTypes(params MimeTypeEnum[] suggestions)
-        {
-            if ((suggestions?.Count() ?? 0) < 1
-                || suggestions.Contains(MimeTypeEnum.Unknown))
-            {
-                UseDefault();
-                return;
-            }
-
-
-
-            void UseDefault()
+            // Check for unknown mime and file types.
+            if ((mimeTypes?.Count ?? 0) < 1 || mimeTypes.Contains(MimeTypeEnum.Unknown))
             {
                 mimeTypes.Clear();
                 mimeTypes.Add(MimeTypeEnum.Audio);
                 mimeTypes.Add(MimeTypeEnum.MuxedAudioVideo);
             }
+
+            if ((fileTypes?.Count ?? 0) < 1 || fileTypes.Contains(FileTypeEnum.Unknown))
+            {
+                fileTypes.Clear();
+                fileTypes.Add(FileTypeEnum.M4a);
+                fileTypes.Add(FileTypeEnum.Mp4);
+                fileTypes.Add(FileTypeEnum.Webm);
+            }
+
+            //
         }
     }
 
