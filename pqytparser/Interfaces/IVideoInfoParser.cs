@@ -1,5 +1,6 @@
 ﻿using pqytparser.Models;
 using pqytparser.Resources;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace pqytparser.Interfaces
@@ -8,6 +9,6 @@ namespace pqytparser.Interfaces
     {
         void SuggestFileTypes(params FileTypeEnum[] suggestions);
         void SuggestMimeTypes(params MimeTypeEnum[] suggestions);
-        Task<VideoDownloadInfo> GetContentUriAsync(string contentId);
+        Task<VideoDownloadInfo> GetContentUriAsync(string contentId, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes);
     }
 }
