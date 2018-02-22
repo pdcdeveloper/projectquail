@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Windows.Web.Http;
 
@@ -64,10 +65,29 @@ namespace pqytparser.ViewModels
         }
 
 
-        // Safely cast from a string to 'Resources.MediaQualityEnum'.  Relies on the int value of each enum member within 'MediaQualityEnum'.
-        MediaQualityEnum MaptoItag(string input)
+        // Safely cast from a string to 'Resources.MediaQualityEnum'.  Relies on the int value of each enum member within 'Resources.MediaQualityEnum'.
+        MediaQualityEnum MapToItag(string input)
         {
-            const string itagValuePattern = @"(?<=itag=)\d{1,3}";           // match "itag=ddd"   return "ddd"
+            const string itagEnumValuePattern = @"(?<=itag=)\d{1,3}";           // match "itag=ddd"   return "ddd"
+
+            // Check if there is an itag before continuing using finer regex pattern.
+            Match match1 = Regex.Match(input, basicItagPattern);
+            if (!match1.Success || (match1.Success && match1.Value != input))
+                return MediaQualityEnum.Unknown;
+
+            // Get only the enum value of the itag.
+            Match match2 = Regex.Match(input, itagEnumValuePattern);
+            if (!match2.Success)
+                return MediaQualityEnum.Unknown;
+            if (!int.TryParse(match2.Value, out int value))
+                return MediaQualityEnum.Unknown;
+
+            // Iterate through 'Resources.MediaQualityEnum'.
+            // <see cref="http://stackoverflow.com/questions/105372/how-do-i-enumerate-an-enum"/>
+            foreach (MediaQualityEnum itag in Enum.GetValues(typeof(MediaQualityEnum)))
+                if ((int)itag == value)
+                    return itag;
+            return MediaQualityEnum.Unknown;
         }
     }
 }
