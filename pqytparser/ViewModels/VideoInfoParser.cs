@@ -45,7 +45,7 @@ namespace pqytparser.ViewModels
                 return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom for content id:    " + contentId), null);
 
             // Parse
-
+            return decoder.GetVideoDownloadInfo(contentId, dom);
         }
     }
 }
