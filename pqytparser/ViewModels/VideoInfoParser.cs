@@ -39,12 +39,10 @@ namespace pqytparser.ViewModels
                 fileTypes.Add(FileTypeEnum.Webm);
             }
 
-            // Decode
+            // Decode and parse.
             string dom = await decoder.GetVideoInfoDomAsync(contentId);
             if (string.IsNullOrEmpty(dom))
                 return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom for content id:    " + contentId), null);
-
-            // Parse
             return decoder.GetVideoDownloadInfo(contentId, dom);
         }
     }
