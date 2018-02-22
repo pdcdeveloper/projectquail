@@ -106,10 +106,12 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IVideoInfoDomDecoder.cs" />
     <Compile Include="Interfaces\IVideoInfoParser.cs" />
     <Compile Include="Models\VideoAvailability.cs" />
     <Compile Include="Models\VideoDownloadInfo.cs" />
     <Compile Include="Models\VideoMetadata.cs" />
+    <Compile Include="ViewModels\VideoInfoDomDecoder.cs" />
     <Compile Include="ViewModels\VideoInfoParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\FileExtensions.cs" />
