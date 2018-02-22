@@ -4,6 +4,7 @@ using pqytparser.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -38,8 +39,27 @@ namespace pqytparser.ViewModels
             const string typePattern1 = "(?<=.*)type=.*\x22";
             const string typePattern2 = "\x26type=.*\x22";
 
+            // todo: check if 'dom' contains 'contentId'.
 
+            // Decode pass 1
+            dom = WebUtility.UrlDecode(dom);
 
+            // Check for errors and specific messages.
+            if (dom.Contains(responseError) || dom.Contains(responsePurchase))
+            {
+                if (dom.Contains(responseError))
+                {
+                    
+                }
+                else if (responseError.Contains(responsePurchase))
+                {
+
+                }
+                else
+                {
+                    return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "The dom contains an error in the response."), null);
+                }
+            }
         }
 
 
