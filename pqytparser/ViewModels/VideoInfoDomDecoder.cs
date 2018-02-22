@@ -56,12 +56,30 @@ namespace pqytparser.ViewModels
         }
 
 
-        // Parses 'input' for the first instance of an query parameter "itag".
+        // Parses 'input' for the first instance of an query parameter "itag=ddd".
         bool TryParseUrlForItag(string input, out string output)
         {
             const string itagPattern1 = @"(?<=\x3F)itag=\d{1,3}?(?=\x26)";  // match "?itag=ddd&" return "itag=ddd"
             const string itagPattern2 = @"(?<=\x26)itag=\d{1,3}?(?=\x26)";  // match "&itag=ddd&" return "itag=ddd"
             const string itagPattern3 = @"(?<=\x26)itag=\d{1,3}";           // match "&itag=ddd"  return "itag=ddd"
+
+            output = null;
+
+            // Match for "itag=ddd".  Uses multiple regex patterns which range from fine grained to coarse search.
+            Match match = Regex.Match(input, itagPattern1);
+            if (!match.Success)
+                if (!((match = Regex.Match(input, itagPattern2)).Success))
+                    if (!((match = Regex.Match(input, itagPattern3)).Success))
+                        if (!((match = Regex.Match(input, basicItagPattern)).Success))
+                            return false;
+
+            // Verify the match.
+            Match verify = Regex.Match(match.Value, basicItagPattern);
+            if (!verify.Success)
+                return false;
+
+            output = match.Value;
+            return true;
         }
 
 
