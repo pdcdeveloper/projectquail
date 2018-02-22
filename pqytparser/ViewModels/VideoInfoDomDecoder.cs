@@ -19,7 +19,7 @@ namespace pqytparser.ViewModels
 
 
         // Retrieves the available download urls by decoding the video info dom for the 'contentId' to parse for itags.
-        public VideoDownloadInfo GetVideoDownloadInfo(string contentId, string dom)
+        public VideoDownloadInfo GetVideoDownloadInfo(string contentId, string contentTitle, string dom)
         {
             const string responseError = "&errorcode";
             const string responseErrorCode = "&errorcode=150";
@@ -39,7 +39,13 @@ namespace pqytparser.ViewModels
             const string typePattern1 = "(?<=.*)type=.*\x22";
             const string typePattern2 = "\x26type=.*\x22";
 
-            // todo: check if 'dom' contains 'contentId'.
+
+            if (string.IsNullOrEmpty(contentId))
+                return new VideoDownloadInfo(null, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Missing content id.") , null);
+            if (string.IsNullOrEmpty(contentTitle))
+                return new VideoDownloadInfo(contentId, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Missing content title."), null);
+            if (string.IsNullOrEmpty(dom))
+                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Missing dom."), null);
 
             // Decode pass 1
             dom = WebUtility.UrlDecode(dom);
@@ -47,7 +53,7 @@ namespace pqytparser.ViewModels
             // Check for errors and specific messages.
             if (dom.Contains(responseError) || dom.Contains(responsePurchase))
             {
-                if (dom.Contains(responseError))
+                if (dom.Contains(responseErrorCode))
                 {
                     
                 }
@@ -57,7 +63,7 @@ namespace pqytparser.ViewModels
                 }
                 else
                 {
-                    return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "The dom contains an error in the response."), null);
+                    return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "The dom contains an error in the response."), null);
                 }
             }
         }

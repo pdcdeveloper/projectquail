@@ -7,6 +7,6 @@ namespace pqytparser.Interfaces
 {
     public interface IVideoInfoParser
     {
-        Task<VideoDownloadInfo> GetContentUriAsync(string contentId, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes);
+        Task<VideoDownloadInfo> GetContentUriAsync(string contentId, string contentTitle, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes);
     }
 }

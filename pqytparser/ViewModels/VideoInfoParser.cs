@@ -18,10 +18,10 @@ namespace pqytparser.ViewModels
             decoder = new VideoInfoDomDecoder();
         }
 
-        public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes)
+        public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId, string contentTitle, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes)
         {
-            if (string.IsNullOrEmpty(contentId))
-                return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
+            if (string.IsNullOrEmpty(contentId) || string.IsNullOrEmpty(contentTitle))
+                return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
 
             // Check for unknown mime and file types.
             if ((mimeTypes?.Count ?? 0) < 1 || mimeTypes.Contains(MimeTypeEnum.Unknown))
@@ -42,8 +42,8 @@ namespace pqytparser.ViewModels
             // Decode and parse.
             string dom = await decoder.GetVideoInfoDomAsync(contentId);
             if (string.IsNullOrEmpty(dom))
-                return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom for content id:    " + contentId), null);
-            return decoder.GetVideoDownloadInfo(contentId, dom);
+                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom"), null);
+            return decoder.GetVideoDownloadInfo(contentId, contentTitle, dom);
         }
     }
 }
