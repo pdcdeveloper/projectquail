@@ -7,14 +7,14 @@ namespace pqytparser.Models
     {
         public readonly string ContentId;
 
-        public readonly VideoAvailability ParserResult;
+        public readonly VideoAvailability Result;
         public readonly List<VideoMetadata> Videos;
 
         public VideoDownloadInfo(string contentId, VideoAvailability parserResult, List<VideoMetadata> videos)
         {
             ContentId = contentId;
-            ParserResult = parserResult;
-            Videos = ParserResult.Availability == VideoAvailabilityEnum.Available ? new List<VideoMetadata>(videos) : null;
+            Result = parserResult;
+            Videos = Result.Availability == VideoAvailabilityEnum.Available ? new List<VideoMetadata>(videos) : null;
         }
     }
 }
