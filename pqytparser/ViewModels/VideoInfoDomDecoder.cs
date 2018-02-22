@@ -17,7 +17,7 @@ namespace pqytparser.ViewModels
 
 
         // Retrieves the available download urls by decoding the video info dom for the 'contentId' to parse for itags.
-        public VideoDownloadInfo GetVideoDownloadInfo(string contentId)
+        public VideoDownloadInfo GetVideoDownloadInfo(string contentId, string dom)
         {
             const string responseError = "&errorcode";
             const string responseErrorCode = "&errorcode=150";
@@ -43,7 +43,7 @@ namespace pqytparser.ViewModels
 
 
         // Retrieves the DOM for the given 'contentId' using YouTube's video info query api.
-        async Task<string> GetVideoInfoDom(string contentId)
+        public async Task<string> GetVideoInfoDomAsync(string contentId)
         {
             const string videoInfoBaseUrl = "https://www.youtube.com/get_video_info?video_id=";
 

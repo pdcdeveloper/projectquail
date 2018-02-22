@@ -9,6 +9,7 @@ namespace pqytparser.Interfaces
 {
     public interface IVideoInfoDomDecoder
     {
-        VideoDownloadInfo GetVideoDownloadInfo(string contentId);
+        VideoDownloadInfo GetVideoDownloadInfo(string contentId, string dom);
+        Task<string> GetVideoInfoDomAsync(string contentId);
     }
 }
