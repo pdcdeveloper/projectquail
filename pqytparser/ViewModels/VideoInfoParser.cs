@@ -6,16 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.Web.Http;
 
 namespace pqytparser.ViewModels
 {
     public class VideoInfoParser : IVideoInfoParser
     {
+        IVideoInfoDomDecoder decoder;
+
+        public VideoInfoParser()
+        {
+            decoder = new VideoInfoDomDecoder();
+        }
+
         public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes)
         {
             if (string.IsNullOrEmpty(contentId))
-                return new VideoDownloadInfo(string.Empty, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
+                return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
 
             // Check for unknown mime and file types.
             if ((mimeTypes?.Count ?? 0) < 1 || mimeTypes.Contains(MimeTypeEnum.Unknown))
@@ -33,7 +39,13 @@ namespace pqytparser.ViewModels
                 fileTypes.Add(FileTypeEnum.Webm);
             }
 
+            // Decode
+            string dom = await decoder.GetVideoInfoDomAsync(contentId);
+            if (string.IsNullOrEmpty(dom))
+                return new VideoDownloadInfo(null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom for content id:    " + contentId), null);
+
             // Parse
+
         }
     }
 }
