@@ -112,56 +112,54 @@ namespace pqytparser.ViewModels
             if (string.IsNullOrEmpty(input))
                 return string.Empty;
 
-            string url = new string(input.ToCharArray());
-
-            // Decode.  By the time the 'url' gets here, this should be pass 3.
-            url = WebUtility.UrlDecode(url);
+            // Decode and use 'Text.StringBuilder'.  By the time 'input' gets here, this should be pass 3.
+            StringBuilder sbuilder = new StringBuilder(WebUtility.UrlDecode(input));
 
             // Remove everything after the "codecs" parameter.
-            Match mcodecsp = Regex.Match(url, codecsPattern);
+            Match mcodecsp = Regex.Match(sbuilder.ToString(), codecsPattern);
             if (mcodecsp.Success)
-                url = url.Remove(mcodecsp.Index, mcodecsp.Length);
+                sbuilder.Remove(mcodecsp.Index, mcodecsp.Length);
 
             // Remove "projection_type" parameter and everything after it.
-            Match mprojectionp = Regex.Match(url, projectionPattern);
+            Match mprojectionp = Regex.Match(sbuilder.ToString(), projectionPattern);
             if (mprojectionp.Success)
-                url = url.Remove(mprojectionp.Index, mprojectionp.Length);
+                sbuilder.Remove(mprojectionp.Index, mprojectionp.Length);
 
             // Remove the trailing "clen" parameter.
-            MatchCollection mclenp = Regex.Matches(url, clenPattern, RegexOptions.RightToLeft);
+            MatchCollection mclenp = Regex.Matches(sbuilder.ToString(), clenPattern, RegexOptions.RightToLeft);
             if (mclenp.Count > 1)
-                url = url.Remove(mclenp[0].Index, mclenp[0].Length);
+                sbuilder.Remove(mclenp[0].Index, mclenp[0].Length);
 
             // Remove the trailing "lmt" pattern.
-            MatchCollection mlmtp = Regex.Matches(url, lmtPattern, RegexOptions.RightToLeft);
+            MatchCollection mlmtp = Regex.Matches(sbuilder.ToString(), lmtPattern, RegexOptions.RightToLeft);
             if (mlmtp.Count > 1)
-                url = url.Remove(mlmtp[0].Index, mlmtp[0].Length);
+                sbuilder.Remove(mlmtp[0].Index, mlmtp[0].Length);
 
             // Remove "fallback_host" parameter.
-            Match mfallbackhostp = Regex.Match(url, fallbackHostPattern);
+            Match mfallbackhostp = Regex.Match(sbuilder.ToString(), fallbackHostPattern);
             if (mfallbackhostp.Success)
-                url = url.Remove(mfallbackhostp.Index, mfallbackhostp.Length);
+                sbuilder.Remove(mfallbackhostp.Index, mfallbackhostp.Length);
 
             // Remove trailing "itag" parameter.  Sometimes there's multiple itags within a url -- there can only be one.
-            MatchCollection mitagp = Regex.Matches(url, itagPattern, RegexOptions.RightToLeft);
+            MatchCollection mitagp = Regex.Matches(sbuilder.ToString(), itagPattern, RegexOptions.RightToLeft);
             if (mitagp.Count > 1)
-                url = url.Remove(mitagp[0].Index, mitagp[0].Length);
+                sbuilder.Remove(mitagp[0].Index, mitagp[0].Length);
 
             // Sometimes the "&" infront of the "type" parameter is no longer there and it must be manually re-added.
-            Match mtypep1 = Regex.Match(url, typePattern1);
+            Match mtypep1 = Regex.Match(sbuilder.ToString(), typePattern1);
             if (mtypep1.Success)
             {
-                Match mtypep2 = Regex.Match(url, typePattern2);
+                Match mtypep2 = Regex.Match(sbuilder.ToString(), typePattern2);
                 if (!mtypep2.Success)
                 {
                     // Remove the match first.
-                    url = url.Remove(mtypep1.Index, mtypep1.Length);
+                    sbuilder.Remove(mtypep1.Index, mtypep1.Length);
                     // Append an "&" followed by the "type" parameter from the match.
-                    url = url.Insert(mtypep1.Index, '\x26' + mtypep1.Value);
+                    sbuilder.Insert(mtypep1.Index, '\x26' + mtypep1.Value);
                 }
             }
 
-            return url;
+            return sbuilder.ToString();
         }
 
 
