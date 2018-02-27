@@ -176,7 +176,7 @@ namespace pqytparser.Resources
 
 
         // Safely cast from a string to 'Resources.MediaQualityEnum'.  Relies on the int value of each enum member within 'Resources.MediaQualityEnum'.
-        public static MediaQualityEnum MapToItag(string input)
+        public static MediaQualityEnum MapItagToEnum(string input)
         {
             const string _itagEnumValuePattern = @"(?<=itag=)\d{1,3}";           // match "itag=ddd"   return "ddd"
 
