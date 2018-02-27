@@ -77,7 +77,7 @@ namespace pqytparser.ViewModels
             string[] responseUrls = Regex.Split(dom, _url);
 
             // Clean up the URLs.
-
+            return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, null), null);
         }
 
 
