@@ -11,11 +11,11 @@ namespace pqytparser.ViewModels
 {
     public class VideoInfoParser : IVideoInfoParser
     {
-        IVideoInfoDomDecoder decoder;
+        IVideoInfoDomDecoder _decoder;
 
         public VideoInfoParser()
         {
-            decoder = new VideoInfoDomDecoder();
+            _decoder = new VideoInfoDomDecoder();
         }
 
         public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId, string contentTitle, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes)
@@ -40,10 +40,10 @@ namespace pqytparser.ViewModels
             }
 
             // Decode and parse.
-            string dom = await decoder.GetVideoInfoDomAsync(contentId);
+            string dom = await _decoder.GetVideoInfoDomAsync(contentId);
             if (string.IsNullOrEmpty(dom))
                 return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom"), null);
-            return decoder.GetVideoDownloadInfo(contentId, contentTitle, dom);
+            return _decoder.GetVideoDownloadInfo(contentId, contentTitle, dom);
         }
     }
 }
