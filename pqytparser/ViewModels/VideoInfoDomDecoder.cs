@@ -74,13 +74,30 @@ namespace pqytparser.ViewModels
 
             // Clean up the URLs.
             var urls = new List<string>(responseUrls.Count());
-            foreach (var url in responseUrls)
+            foreach (var response in responseUrls)
             {
-                if (string.IsNullOrEmpty(url) || !url.Contains(_https) || !url.Contains(_mime) || url.Contains(_ytimg))
+                if (string.IsNullOrEmpty(response) || !response.Contains(_https) || !response.Contains(_mime) || response.Contains(_ytimg))
                     continue;
 
+                string url = RemoveQueryParameters(response);
+
+                // Check the results.
+                if (string.IsNullOrEmpty(url) || !url.Contains(_https) || !response.Contains(_mime))
+                    continue;
+
+                // TODO:    Final clean up.
+
+                // Gather the metadata for the url.
+                if (!MediaQualityEnumHelpers.TryParseUrlForItag(url, out string itag))
+                    continue;
+                if (!MediaQualityEnumHelpers.TryMapItagToEnum(itag, out MediaQualityEnum quality))
+                    continue;
 
             }
+
+            // Check if there are urls.
+            if (urls.Count < 1)
+                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Download urls are not available."), null);
 
             return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, null), null);
         }
