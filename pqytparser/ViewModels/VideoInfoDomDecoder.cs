@@ -14,10 +14,6 @@ namespace pqytparser.ViewModels
 {
     public class VideoInfoDomDecoder : IVideoInfoDomDecoder
     {
-        // Patterns use positive lookbehind and lazy modifier positive lookahead ("C# 5.0 In a Nutshell" by the Albahari brothers (p.998)).
-        const string _basicItagPattern = @"itag=\d{1,3}";                // match "itag=ddd"   return "itag=ddd"
-
-
         // Retrieves the available download urls by decoding the video info DOM for the 'contentId' to parse for itags.
         public VideoDownloadInfo GetVideoDownloadInfo(string contentId, string contentTitle, string dom)
         {
@@ -169,60 +165,6 @@ namespace pqytparser.ViewModels
             }
 
             return sbuilder.ToString();
-        }
-
-
-        // Parses 'input' for the first instance of an query parameter "itag=ddd".
-        bool TryParseUrlForItag(string input, out string output)
-        {
-            const string _itagPattern1 = @"(?<=\x3F)itag=\d{1,3}?(?=\x26)";  // match "?itag=ddd&" return "itag=ddd"
-            const string _itagPattern2 = @"(?<=\x26)itag=\d{1,3}?(?=\x26)";  // match "&itag=ddd&" return "itag=ddd"
-            const string _itagPattern3 = @"(?<=\x26)itag=\d{1,3}";           // match "&itag=ddd"  return "itag=ddd"
-
-
-            output = null;
-
-            // Match for "itag=ddd".  Uses multiple regex patterns which range from fine grained to coarse search.
-            Match match = Regex.Match(input, _itagPattern1);
-            if (!match.Success)
-                if (!((match = Regex.Match(input, _itagPattern2)).Success))
-                    if (!((match = Regex.Match(input, _itagPattern3)).Success))
-                        if (!((match = Regex.Match(input, _basicItagPattern)).Success))
-                            return false;
-
-            // Verify the match.
-            Match verify = Regex.Match(match.Value, _basicItagPattern);
-            if (!verify.Success)
-                return false;
-
-            output = match.Value;
-            return true;
-        }
-
-
-        // Safely cast from a string to 'Resources.MediaQualityEnum'.  Relies on the int value of each enum member within 'Resources.MediaQualityEnum'.
-        MediaQualityEnum MapToItag(string input)
-        {
-            const string _itagEnumValuePattern = @"(?<=itag=)\d{1,3}";           // match "itag=ddd"   return "ddd"
-
-            // Check if there is an itag before continuing using finer regex pattern.
-            Match match1 = Regex.Match(input, _basicItagPattern);
-            if (!match1.Success || (match1.Success && match1.Value != input))
-                return MediaQualityEnum.Unknown;
-
-            // Get only the enum value of the itag.
-            Match match2 = Regex.Match(input, _itagEnumValuePattern);
-            if (!match2.Success)
-                return MediaQualityEnum.Unknown;
-            if (!int.TryParse(match2.Value, out int value))
-                return MediaQualityEnum.Unknown;
-
-            // Iterate through 'Resources.MediaQualityEnum'.
-            // <see cref="http://stackoverflow.com/questions/105372/how-do-i-enumerate-an-enum"/>
-            foreach (MediaQualityEnum itag in Enum.GetValues(typeof(MediaQualityEnum)))
-                if ((int)itag == value)
-                    return itag;
-            return MediaQualityEnum.Unknown;
         }
     }
 }
