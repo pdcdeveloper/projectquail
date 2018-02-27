@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using pqlib.Reflection.Attributes;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace pqytparser.Resources
 {
@@ -24,5 +26,19 @@ namespace pqytparser.Resources
 
         [Display(ShortName = FileExtensions.Webm)]
         Webm
+    }
+
+
+    public static class FileTypeEnumHelpers
+    {
+        public static FileTypeEnum GetFileType(this MediaQualityEnum quality)
+        {
+            if (quality == MediaQualityEnum.Unknown)
+                return FileTypeEnum.Unknown;
+            foreach (FileTypeEnum ft in Enum.GetValues(typeof(FileTypeEnum)))
+                if (quality.GetShortName().ToLower() == ft.GetShortName().ToLower())
+                    return ft;
+            return FileTypeEnum.Unknown;
+        }
     }
 }
