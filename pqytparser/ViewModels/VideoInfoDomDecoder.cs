@@ -20,9 +20,6 @@ namespace pqytparser.ViewModels
             const string _responseError = "&errorcode";
             const string _responseErrorCode = "&errorcode=150";
             const string _responsePurchase = "&requires_purchase";
-            const string _https = "https";
-            const string _mime = "mime=";
-            const string _ytimg = "ytimg";
             const string _url = "url=";
 
             const string _streamMapPattern = "(?<=url_encoded_fmt_stream_map=).*";
@@ -72,34 +69,30 @@ namespace pqytparser.ViewModels
             // Split.
             string[] responseUrls = Regex.Split(dom, _url);
 
-            // Clean up the URLs.
-            var urls = new List<string>(responseUrls.Count());
+            // Clean up the URLs and place them in a new list.
+            var data = new List<VideoMetadata>(responseUrls.Length);
             foreach (var response in responseUrls)
             {
-                if (string.IsNullOrEmpty(response) || !response.Contains(_https) || !response.Contains(_mime) || response.Contains(_ytimg))
-                    continue;
-
                 string url = RemoveQueryParameters(response);
 
-                // Check the results.
-                if (string.IsNullOrEmpty(url) || !url.Contains(_https) || !response.Contains(_mime))
-                    continue;
-
-                // TODO:    Final clean up.
-
-                // Gather the metadata for the url.
-                if (!MediaQualityEnumHelpers.TryParseUrlForItag(url, out string itag))
-                    continue;
-                if (!MediaQualityEnumHelpers.TryMapItagToEnum(itag, out MediaQualityEnum quality))
-                    continue;
-
+                // Check the results after removing unnecessary query parameters and gather the metadata for the url.
+                if (!string.IsNullOrEmpty(url))
+                        if (MediaQualityEnumHelpers.TryParseUrlForItag(url, out string itag))
+                            if (MediaQualityEnumHelpers.TryMapItagToEnum(itag, out MediaQualityEnum quality))
+                                // The metadata checks out and can now be added to the list.
+                                data.Add(new VideoMetadata(contentId, contentTitle, quality, url));
             }
 
+            // Lower the capacity of the metadata list.
+            data.Capacity = data.Count;
+
             // Check if there are urls.
-            if (urls.Count < 1)
+            if (data.Count < 1)
                 return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Download urls are not available."), null);
 
-            return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, null), null);
+
+
+            return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, null), null);    // placeholder
         }
 
 
@@ -130,12 +123,19 @@ namespace pqytparser.ViewModels
             const string _typePattern1 = "(?<=.*)type=.*\x22";
             const string _typePattern2 = "\x26type=.*\x22";
 
+            const string _https = "https";
+            const string _mime = "mime=";
+            const string _ytimg = "ytimg";
+
 
             if (string.IsNullOrEmpty(input))
                 return string.Empty;
 
+            if (!input.Contains(_https) || !input.Contains(_mime) || input.Contains(_ytimg))
+                return string.Empty;
+
             // Decode and use 'Text.StringBuilder'.  By the time 'input' gets here, this should be pass 3.
-            StringBuilder sbuilder = new StringBuilder(WebUtility.UrlDecode(input));
+            StringBuilder sbuilder = new StringBuilder(WebUtility.UrlDecode(input), input.Length);
 
             // Remove everything after the "codecs" parameter.
             Match mcodecsp = Regex.Match(sbuilder.ToString(), _codecsPattern);
@@ -180,6 +180,23 @@ namespace pqytparser.ViewModels
                     sbuilder.Insert(mtypep1.Index, '\x26' + mtypep1.Value);
                 }
             }
+
+            // Final clean up.  Order matters.
+            // Replace.
+            sbuilder.Replace(",&", string.Empty);
+            // Trim.
+            if (sbuilder[sbuilder.Length - 1] == ',')
+                sbuilder.Remove(sbuilder.Length - 1, 1);
+            if (sbuilder[sbuilder.Length - 1] == '&')
+                sbuilder.Remove(sbuilder.Length - 1, 1);
+            if (sbuilder[sbuilder.Length - 1] == '_')
+                sbuilder.Remove(sbuilder.Length - 1, 1);
+            if (sbuilder[sbuilder.Length - 1] == '&')
+                sbuilder.Remove(sbuilder.Length - 1, 1);
+            if (sbuilder[sbuilder.Length - 1] == ',')
+                sbuilder.Remove(sbuilder.Length - 1, 1);
+            // Replace, again.
+            sbuilder.Replace("&&", "&");
 
             return sbuilder.ToString();
         }
