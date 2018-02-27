@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using pqlib.Reflection.Attributes;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace pqytparser.Resources
 {
@@ -22,5 +24,19 @@ namespace pqytparser.Resources
 
         [Display(Description = MimeTypes.MuxedAudioVideo3d)]
         MuxedAudioVideo3d
+    }
+
+
+    public static class MimeTypeEnumHelpers
+    {
+        public static MimeTypeEnum GetMimeType(this MediaQualityEnum quality)
+        {
+            if (quality == MediaQualityEnum.Unknown)
+                return MimeTypeEnum.Unknown;
+            foreach (MimeTypeEnum mt in Enum.GetValues(typeof(MimeTypeEnum)))
+                if (quality.GetDescription().ToLower() == mt.GetDescription().ToLower())
+                    return mt;
+            return MimeTypeEnum.Unknown;
+        }
     }
 }

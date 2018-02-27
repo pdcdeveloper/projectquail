@@ -28,29 +28,4 @@ namespace pqytparser.Models
             DownloadUrl = downloadUrl;
         }
     }
-
-    // The static methods of this class should only ever be used by the 'VideoMetadata' model.
-    static class VideoMetaDataHelpers
-    {
-        public static FileTypeEnum GetFileType(this MediaQualityEnum quality)
-        {
-            if (quality == MediaQualityEnum.Unknown)
-                return FileTypeEnum.Unknown;
-            foreach (FileTypeEnum ft in Enum.GetValues(typeof(FileTypeEnum)))
-                if (quality.GetShortName().ToLower() == ft.GetShortName().ToLower())
-                    return ft;
-            return FileTypeEnum.Unknown;
-        }
-
-        public static MimeTypeEnum GetMimeType(this MediaQualityEnum quality)
-        {
-            if (quality == MediaQualityEnum.Unknown)
-                return MimeTypeEnum.Unknown;
-            foreach (MimeTypeEnum mt in Enum.GetValues(typeof(MimeTypeEnum)))
-                if (quality.GetDescription().ToLower() == mt.GetDescription().ToLower())
-                    return mt;
-            return MimeTypeEnum.Unknown;
-        }
-    }
-
 }
