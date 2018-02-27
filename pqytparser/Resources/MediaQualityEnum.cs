@@ -146,6 +146,7 @@ namespace pqytparser.Resources
     {
         // Patterns use positive lookbehind and lazy modifier positive lookahead ("C# 5.0 In a Nutshell" by the Albahari brothers (p.998)).
         const string _basicItagPattern = @"itag=\d{1,3}";                // match "itag=ddd"   return "itag=ddd"
+        const string _itagEnumValuePattern = @"(?<=itag=)\d{1,3}";           // match "itag=ddd"   return "ddd"
 
         // Parses 'input' for the first instance of an query parameter "itag=ddd".
         public static bool TryParseUrlForItag(string input, out string output)
@@ -174,12 +175,9 @@ namespace pqytparser.Resources
             return true;
         }
 
-
         // Safely cast from a string to 'Resources.MediaQualityEnum'.  Relies on the int value of each enum member within 'Resources.MediaQualityEnum'.
         public static MediaQualityEnum MapItagToEnum(string input)
         {
-            const string _itagEnumValuePattern = @"(?<=itag=)\d{1,3}";           // match "itag=ddd"   return "ddd"
-
             // Check if there is an itag before continuing using finer regex pattern.
             Match match1 = Regex.Match(input, _basicItagPattern);
             if (!match1.Success || (match1.Success && match1.Value != input))
@@ -198,6 +196,34 @@ namespace pqytparser.Resources
                 if ((int)itag == value)
                     return itag;
             return MediaQualityEnum.Unknown;
+        }
+
+        // Alternate version of 'MediaQualityEnumHelpers.MapItagToEnum'.
+        public static bool TryMapItagToEnum(string input, out MediaQualityEnum quality)
+        {
+            quality = MediaQualityEnum.Unknown;
+
+            // Check if there is an itag before continuing using finer regex pattern.
+            Match match1 = Regex.Match(input, _basicItagPattern);
+            if (!match1.Success || (match1.Success && match1.Value != input))
+                return false;
+
+            // Get only the enum value of the itag.
+            Match match2 = Regex.Match(input, _itagEnumValuePattern);
+            if (!match2.Success)
+                return false;
+            if (!int.TryParse(match2.Value, out int value))
+                return false;
+
+            // Iterate through 'Resources.MediaQualityEnum'.
+            // <see cref="http://stackoverflow.com/questions/105372/how-do-i-enumerate-an-enum"/>
+            foreach (MediaQualityEnum itag in Enum.GetValues(typeof(MediaQualityEnum)))
+                if ((int)itag == value)
+                {
+                    quality = itag;
+                    return true;
+                }
+            return false;
         }
     }
 }
