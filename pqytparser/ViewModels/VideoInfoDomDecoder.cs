@@ -87,12 +87,13 @@ namespace pqytparser.ViewModels
                 return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Download urls are not available."), null);
 
             // Lower the capacity of the metadata list.  Not sure if necessary.
-            data.Capacity = data.Count;
+            data.TrimExcess();
 
-
-
-
-            return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, null), null);    // placeholder
+            return new VideoDownloadInfo(
+                contentId,
+                contentTitle, 
+                new VideoAvailability(VideoAvailabilityEnum.Available, string.Empty),
+                data);
         }
 
 
