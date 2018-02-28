@@ -79,16 +79,16 @@ namespace pqytparser.ViewModels
                 if (!string.IsNullOrEmpty(url))
                         if (MediaQualityEnumHelpers.TryParseUrlForItag(url, out string itag))
                             if (MediaQualityEnumHelpers.TryMapItagToEnum(itag, out MediaQualityEnum quality))
-                                // The metadata checks out and can now be added to the list.
-                                data.Add(new VideoMetadata(contentId, contentTitle, quality, url));
+                                data.Add(new VideoMetadata(contentId, contentTitle, quality, url)); // Hope
             }
-
-            // Lower the capacity of the metadata list.
-            data.Capacity = data.Count;
 
             // Check if there are urls.
             if (data.Count < 1)
                 return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Download urls are not available."), null);
+
+            // Lower the capacity of the metadata list.  Not sure if necessary.
+            data.Capacity = data.Count;
+
 
 
 
