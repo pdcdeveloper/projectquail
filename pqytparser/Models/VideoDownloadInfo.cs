@@ -16,7 +16,7 @@ namespace pqytparser.Models
             ContentId = contentId;
             ContentTitle = contentTitle;
             Result = parserResult;
-            Videos = Result.Availability == VideoAvailabilityEnum.Available ? new List<VideoMetadata>(videos) : null;
+            Videos = (videos?.Count ?? 0) > 0 ? new List<VideoMetadata>(videos) : null;
         }
     }
 }
