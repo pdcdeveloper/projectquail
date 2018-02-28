@@ -99,7 +99,7 @@
     <Compile Include="UnitTestApp.xaml.cs">
       <DependentUpon>UnitTestApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VideoInfoParserUnitTest.cs" />
+    <Compile Include="VideoInfoDomDecoderUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="UnitTestApp.xaml">
@@ -133,6 +133,12 @@
     <PackageReference Include="MSTest.TestFramework">
       <Version>1.2.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pqytparser\pqytparser.csproj">
+      <Project>{489d68fc-af00-4e3d-b05a-05cff491f73f}</Project>
+      <Name>pqytparser</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
