@@ -20,9 +20,6 @@ namespace pqytparser.ViewModels
 
         public async Task<VideoDownloadInfo> GetContentUriAsync(string contentId, string contentTitle, IList<MimeTypeEnum> mimeTypes, IList<FileTypeEnum> fileTypes)
         {
-            if (string.IsNullOrEmpty(contentId) || string.IsNullOrEmpty(contentTitle))
-                return new VideoDownloadInfo(null, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Content id was not set."), null);
-
             // Check for unknown mime and file types.
             if ((mimeTypes?.Count ?? 0) < 1 || mimeTypes.Contains(MimeTypeEnum.Unknown))
             {
@@ -41,9 +38,11 @@ namespace pqytparser.ViewModels
 
             // Decode and parse.
             string dom = await _decoder.GetVideoInfoDomAsync(contentId);
-            if (string.IsNullOrEmpty(dom))
-                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Failed to retrieve the dom"), null);
-            return _decoder.GetVideoDownloadInfo(contentId, contentTitle, dom);
+            VideoDownloadInfo info = _decoder.GetVideoDownloadInfo(contentId, contentTitle, dom);
+
+            // TODO:    rank.
+
+            return info;
         }
     }
 }
