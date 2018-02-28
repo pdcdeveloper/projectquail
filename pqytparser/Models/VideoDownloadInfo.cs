@@ -8,15 +8,15 @@ namespace pqytparser.Models
         public readonly string ContentId;
         public readonly string ContentTitle;
 
-        public readonly VideoAvailability Result;
+        public readonly VideoAvailability Status;
         public readonly List<VideoMetadata> Videos;
 
-        public VideoDownloadInfo(string contentId, string contentTitle, VideoAvailability parserResult, List<VideoMetadata> videos)
+        public VideoDownloadInfo(string contentId, string contentTitle, VideoAvailability status, List<VideoMetadata> videos)
         {
             ContentId = contentId;
             ContentTitle = contentTitle;
-            Result = parserResult;
-            Videos = Result.Availability == VideoAvailabilityEnum.Available ? new List<VideoMetadata>(videos) : null;
+            Status = status;
+            Videos = (videos?.Count ?? 0) > 0 ? new List<VideoMetadata>(videos) : null;
         }
     }
 }
