@@ -26,11 +26,11 @@ namespace pqytparser.ViewModels
 
 
             if (string.IsNullOrEmpty(contentId))
-                return new VideoDownloadInfo(null, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Missing content id.") , null);
+                return new VideoDownloadInfo(VideoAvailabilityEnum.NotAvailable, null, contentTitle, "Missing content id.", null);
             if (string.IsNullOrEmpty(contentTitle))
-                return new VideoDownloadInfo(contentId, null, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Missing content title."), null);
+                return new VideoDownloadInfo(VideoAvailabilityEnum.NotAvailable, contentId, null, "Missing content title.", null);
             if (string.IsNullOrEmpty(dom))
-                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Missing dom."), null);
+                return new VideoDownloadInfo(VideoAvailabilityEnum.NotAvailable, contentId, contentTitle, "Missing dom.", null);
 
             // Decode pass 1.
             dom = WebUtility.UrlDecode(dom);
@@ -43,21 +43,21 @@ namespace pqytparser.ViewModels
 
                 if (dom.Contains(_responseErrorCode))
                 {
-                    errorMessage = "YouTube video info response contains errorcode 150.";
                     errorStatus = VideoAvailabilityEnum.ErrorCode;
+                    errorMessage = "YouTube video info response contains errorcode 150.";
                 }
                 else if (_responseError.Contains(_responsePurchase))
                 {
-                    errorMessage = "YouTube content requires purchase.";
                     errorStatus = VideoAvailabilityEnum.RequiresPurchase;
+                    errorMessage = "YouTube content requires purchase.";
                 }
                 else
                 {
-                    errorMessage = "The dom contains an error in the response.";
                     errorStatus = VideoAvailabilityEnum.ErrorCode;
+                    errorMessage = "The dom contains an error in the response.";
                 }
 
-                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(errorStatus, errorMessage), null);
+                return new VideoDownloadInfo(errorStatus, contentId, contentTitle, errorMessage, null);
             }
 
             // Get everything after "url_encoded_fmt_stream_map=".
@@ -84,15 +84,16 @@ namespace pqytparser.ViewModels
 
             // Check if there are urls.
             if (data.Count < 1)
-                return new VideoDownloadInfo(contentId, contentTitle, new VideoAvailability(VideoAvailabilityEnum.NotAvailable, "Download urls are not available."), null);
+                return new VideoDownloadInfo(VideoAvailabilityEnum.NotAvailable, contentId, contentTitle, "Download urls are not available.", null);
 
             // Lower the capacity of the metadata list.  Not sure if necessary.
             data.TrimExcess();
 
             return new VideoDownloadInfo(
+                VideoAvailabilityEnum.Available,
                 contentId,
                 contentTitle, 
-                new VideoAvailability(VideoAvailabilityEnum.Available, string.Empty),
+                null,
                 data);
         }
 
