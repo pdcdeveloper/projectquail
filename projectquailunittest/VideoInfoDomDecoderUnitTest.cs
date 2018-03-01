@@ -23,18 +23,18 @@ namespace projectquailunittest
         {
             // Missing 'contentId'.
             var downloadInfo = _decoder.GetVideoDownloadInfo(null, "title", "dom");
-            Assert.IsTrue(downloadInfo.Status.Availability == VideoAvailabilityEnum.NotAvailable);
-            Assert.IsTrue(downloadInfo.Status.ErrorMessage.ToLower().Contains("missing content id"));
+            Assert.IsTrue(downloadInfo.Availability == VideoAvailabilityEnum.NotAvailable);
+            Assert.IsTrue(downloadInfo.ErrorMessage.ToLower().Contains("missing content id"));
 
             // Missing 'contentTitle'.
             downloadInfo = _decoder.GetVideoDownloadInfo("id", null, "dom");
-            Assert.IsTrue(downloadInfo.Status.Availability == VideoAvailabilityEnum.NotAvailable);
-            Assert.IsTrue(downloadInfo.Status.ErrorMessage.ToLower().Contains("missing content title"));
+            Assert.IsTrue(downloadInfo.Availability == VideoAvailabilityEnum.NotAvailable);
+            Assert.IsTrue(downloadInfo.ErrorMessage.ToLower().Contains("missing content title"));
 
             // Missing 'dom'.
             downloadInfo = _decoder.GetVideoDownloadInfo("id", "title", null);
-            Assert.IsTrue(downloadInfo.Status.Availability == VideoAvailabilityEnum.NotAvailable);
-            Assert.IsTrue(downloadInfo.Status.ErrorMessage.ToLower().Contains("missing dom"));
+            Assert.IsTrue(downloadInfo.Availability == VideoAvailabilityEnum.NotAvailable);
+            Assert.IsTrue(downloadInfo.ErrorMessage.ToLower().Contains("missing dom"));
         }
 
         [TestMethod]
@@ -45,8 +45,8 @@ namespace projectquailunittest
             var downloadInfo = _decoder.GetVideoDownloadInfo("Mxv9AM397Y8", "Monster Hunter World", dom);
             Assert.IsTrue(downloadInfo.ContentId == "Mxv9AM397Y8");
             Assert.IsTrue(downloadInfo.ContentTitle == "Monster Hunter World");
-            Assert.IsTrue(downloadInfo.Status.Availability == VideoAvailabilityEnum.Available);
-            Assert.IsTrue(string.IsNullOrEmpty(downloadInfo.Status.ErrorMessage));
+            Assert.IsTrue(downloadInfo.Availability == VideoAvailabilityEnum.Available);
+            Assert.IsTrue(string.IsNullOrEmpty(downloadInfo.ErrorMessage));
             Assert.IsTrue(downloadInfo.Videos != null);
             Assert.IsTrue(downloadInfo.Videos.Count > 0);
         }
@@ -60,8 +60,8 @@ namespace projectquailunittest
             var downloadInfo = _decoder.GetVideoDownloadInfo("Mxv9AM397Y8", "Monster Hunter World", dom);
             Assert.IsTrue(downloadInfo.ContentId == "Mxv9AM397Y8");
             Assert.IsTrue(downloadInfo.ContentTitle == "Monster Hunter World");
-            Assert.IsTrue(downloadInfo.Status.Availability == VideoAvailabilityEnum.Available);
-            Assert.IsTrue(string.IsNullOrEmpty(downloadInfo.Status.ErrorMessage));
+            Assert.IsTrue(downloadInfo.Availability == VideoAvailabilityEnum.Available);
+            Assert.IsTrue(string.IsNullOrEmpty(downloadInfo.ErrorMessage));
             Assert.IsTrue(downloadInfo.Videos != null);
             Assert.IsTrue(downloadInfo.Videos.Count > 0);
         }
