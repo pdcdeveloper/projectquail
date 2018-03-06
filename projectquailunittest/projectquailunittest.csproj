@@ -100,6 +100,7 @@
       <DependentUpon>UnitTestApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="VideoInfoDomDecoderUnitTest.cs" />
+    <Compile Include="VideoInfoParserUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="UnitTestApp.xaml">
