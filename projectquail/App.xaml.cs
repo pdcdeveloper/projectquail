@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,8 +29,15 @@ namespace projectquail
         /// </summary>
         public App()
         {
+            // Allow the application to take advantage of all the pixels.
+            ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            // Xbox One best practices.
+            // <see cref="https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/tailoring-for-xbox"/>
+            this.RequiresPointerMode = ApplicationRequiresPointerMode.WhenRequested;
         }
 
         /// <summary>
@@ -47,6 +55,12 @@ namespace projectquail
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+
+                // More Xbox One best practices.
+                // 'ApplicationViewBoundsMode.UseCoreWindow' may cause flyouts to ignore visible bounds.
+                ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
+
+                // TODO:    Check for updates.
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
