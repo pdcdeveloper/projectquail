@@ -9,6 +9,7 @@ namespace pqytparser.Models
         public readonly string ContentId;
         public readonly string ContentTitle;
         public readonly MediaQualityEnum Quality;
+        public readonly int Itag;
         public readonly MimeTypeEnum MimeType;
         public readonly FileTypeEnum FileType;
         public readonly string FileExt;
@@ -21,6 +22,7 @@ namespace pqytparser.Models
             ContentId = contentId;
             ContentTitle = contentTitle;
             Quality = quality;
+            Itag = (int)Quality;
             MimeType = Quality.GetMimeType();
             FileType = Quality.GetFileType();
             FileExt = Quality.GetShortName();
