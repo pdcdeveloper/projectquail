@@ -86,7 +86,7 @@ namespace pqytparser.ViewModels
             if (data.Count < 1)
                 return new VideoDownloadInfo(VideoAvailabilityEnum.NotAvailable, contentId, contentTitle, "Download urls are not available.", null);
 
-            // Lower the capacity of the metadata list.  Not sure if necessary.
+            // Lower the capacity of the metadata list.
             data.TrimExcess();
 
             return new VideoDownloadInfo(
@@ -137,7 +137,7 @@ namespace pqytparser.ViewModels
                 return string.Empty;
 
             // Decode and use 'Text.StringBuilder'.  By the time 'input' gets here, this should be pass 3.
-            StringBuilder sbuilder = new StringBuilder(WebUtility.UrlDecode(input), input.Length);
+            StringBuilder sbuilder = new StringBuilder(WebUtility.UrlDecode(input));
 
             // Remove everything after the "codecs" parameter.
             Match mcodecsp = Regex.Match(sbuilder.ToString(), _codecsPattern);
@@ -179,7 +179,7 @@ namespace pqytparser.ViewModels
                     // Remove the match first.
                     sbuilder.Remove(mtypep1.Index, mtypep1.Length);
                     // Append an "&" followed by the "type" parameter from the match.
-                    sbuilder.Insert(mtypep1.Index, '\x26' + mtypep1.Value);
+                    sbuilder.Insert(mtypep1.Index, '\x26' + mtypep1.Value); // Note:    this operation re-adjusts 'StringBuilder.Capacity'
                 }
             }
 
@@ -199,6 +199,8 @@ namespace pqytparser.ViewModels
                 sbuilder.Remove(sbuilder.Length - 1, 1);
             // Replace, again.
             sbuilder.Replace("&&", "&");
+            // Re-adjust the capacity.
+            sbuilder.Capacity = sbuilder.Length;
 
             return sbuilder.ToString();
         }
