@@ -6,12 +6,12 @@ namespace pqytparser.Models
 {
     public struct VideoMetadata
     {
-        public readonly string ContentId;
-        public readonly string ContentTitle;
-        public readonly MediaQualityEnum Quality;
-        public readonly int Itag;
         public readonly MimeTypeEnum MimeType;
         public readonly FileTypeEnum FileType;
+        public readonly MediaQualityEnum Quality;
+        public readonly int Itag;
+        public readonly string ContentId;
+        public readonly string ContentTitle;
         public readonly string FileExt;
 
         public readonly string DownloadUrl;
