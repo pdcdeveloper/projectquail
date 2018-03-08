@@ -9,7 +9,7 @@ namespace pqlib.Reflection
 {
     // The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
     // Assigning default values to generic types:
-    //      https://msdn.microsoft.com/en-us/library/xwth0h0d.aspx
+    // <see cref="https://msdn.microsoft.com/en-us/library/xwth0h0d.aspx"/>
     public class AttributeHelper
     {
         public FieldInfo GetFieldInfo<T>(T member)
