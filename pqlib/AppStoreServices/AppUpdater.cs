@@ -20,24 +20,24 @@ namespace pqlib.AppStoreServices
             _storeContext = storeContext ?? StoreContext.GetDefault();
         }
 
-        public async Task<bool> DownloadAndInstallMostRecentVersionAsync()
+        public async Task<StorePackageUpdateState> DownloadAndInstallMostRecentVersionAsync()
         {
             if (_storeContext == null)
             {
-                return false;
+                return StorePackageUpdateState.OtherError;
             }
 
             // Get available updates.
             var updates = await _storeContext.GetAppAndOptionalStorePackageUpdatesAsync();
             if ((updates?.Count ?? 0) < 1)
             {
-                return false;   // No updates were found
+                return StorePackageUpdateState.OtherError;  // No updates were found
             }
 
             // Content verification.
             foreach (var update in updates)
                 if (!await update.Package.VerifyContentIntegrityAsync())
-                    return false;
+                    return StorePackageUpdateState.OtherError;
 
             // Download and install.
             // This method will automatically show a consent dialog.
@@ -47,12 +47,6 @@ namespace pqlib.AppStoreServices
             var result = await downloadOperation.AsTask();
             switch (result.OverallState)
             {
-                case StorePackageUpdateState.Completed:
-                    return true;
-
-                case StorePackageUpdateState.Canceled:
-                    break;
-
                 case StorePackageUpdateState.OtherError:
                     MessageDialog mdialog = new MessageDialog("An app update was detected, but may still be unavailable to download.  Please try updating again at a later time.");
                     mdialog.Commands.Add(new UICommand("Close this dialog"));
@@ -60,7 +54,7 @@ namespace pqlib.AppStoreServices
                     break;
             }
 
-            return false;   // Something went wrong
+            return result.OverallState;
         }
     }
 }

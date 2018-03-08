@@ -72,7 +72,7 @@ namespace projectquail
 
 #if !DEBUG
                 // Check for updates.
-                var success = await _appUpdater.DownloadAndInstallMostRecentVersionAsync();
+                var packageUpdateState = await _appUpdater.DownloadAndInstallMostRecentVersionAsync();
 #endif
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
