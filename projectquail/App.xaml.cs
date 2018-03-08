@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pqlib.AppStoreServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Services.Store;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -23,6 +25,8 @@ namespace projectquail
     /// </summary>
     sealed partial class App : Application
     {
+        IAppUpdater _appUpdater;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -31,6 +35,8 @@ namespace projectquail
         {
             // Allow the application to take advantage of all the pixels.
             ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+
+            _appUpdater = new AppUpdater();
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
@@ -45,7 +51,7 @@ namespace projectquail
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -60,7 +66,8 @@ namespace projectquail
                 // 'ApplicationViewBoundsMode.UseCoreWindow' may cause flyouts to ignore visible bounds.
                 ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 
-                // TODO:    Check for updates.
+                // Check for updates.
+                var success = await _appUpdater.DownloadAndInstallMostRecentVersionAsync();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 

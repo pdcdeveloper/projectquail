@@ -136,6 +136,12 @@
       <Version>11.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pqlib\pqlib.csproj">
+      <Project>{D064263D-1601-4B2D-959F-B208DC2167EA}</Project>
+      <Name>pqlib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
