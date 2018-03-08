@@ -51,7 +51,11 @@ namespace projectquail
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
+#if !DEBUG
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
+#else
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
+#endif
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -66,8 +70,10 @@ namespace projectquail
                 // 'ApplicationViewBoundsMode.UseCoreWindow' may cause flyouts to ignore visible bounds.
                 ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 
+#if !DEBUG
                 // Check for updates.
                 var success = await _appUpdater.DownloadAndInstallMostRecentVersionAsync();
+#endif
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
