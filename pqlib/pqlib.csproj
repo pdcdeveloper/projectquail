@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="AppStoreServices\AppUpdater.cs" />
     <Compile Include="AppStoreServices\IAppUpdater.cs" />
+    <Compile Include="CommonRegex\HtmlPatterns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\Attributes\AttributeHelper.cs" />
     <Compile Include="Reflection\Attributes\DisplayAttributeExtension.cs" />
