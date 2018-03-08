@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pqlib.Reflection.Attributes
+namespace pqlib.Reflection
 {
     // The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
     // Assigning default values to generic types:

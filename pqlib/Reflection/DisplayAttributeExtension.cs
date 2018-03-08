@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pqlib.Reflection.Attributes
+namespace pqlib.Reflection
 {
     // The extension methods from this class are typically used on enum members that use 'DataAnnotations.DisplayAttribute'
     // and may otherwise be used by any member that is using 'DisplayAttribute'.
