@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace pqlib.CommonRegex
+﻿namespace pqcommonregex
 {
     // <see cref="http://www.w3schools.com/"/>
     // <see cref="http://www.w3schools.com/tags/"/>
