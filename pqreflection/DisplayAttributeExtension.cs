@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace pqlib.Reflection
+namespace pqreflection
 {
     // The extension methods from this class are typically used on enum members that use 'DataAnnotations.DisplayAttribute'
     // and may otherwise be used by any member that is using 'DisplayAttribute'.

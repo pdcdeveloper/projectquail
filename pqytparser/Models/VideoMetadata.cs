@@ -1,6 +1,6 @@
 ﻿using System;
 using pqytparser.Resources;
-using pqlib.Reflection;
+using pqreflection;
 
 namespace pqytparser.Models
 {
