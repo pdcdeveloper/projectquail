@@ -1,4 +1,5 @@
-﻿using pqlib.AppStoreServices;
+﻿using pqappstoreservices.Interfaces;
+using pqappstoreservices.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;

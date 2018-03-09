@@ -137,9 +137,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\pqlib\pqlib.csproj">
-      <Project>{D064263D-1601-4B2D-959F-B208DC2167EA}</Project>
-      <Name>pqlib</Name>
+    <ProjectReference Include="..\pqappstoreservices\pqappstoreservices.csproj">
+      <Project>{8ae13322-9ffa-44ca-9b3e-08b01cc03ba9}</Project>
+      <Name>pqappstoreservices</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
