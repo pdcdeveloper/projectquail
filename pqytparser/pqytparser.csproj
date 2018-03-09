@@ -133,6 +133,10 @@
       <Project>{d064263d-1601-4b2d-959f-b208dc2167ea}</Project>
       <Name>pqlib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\pqreflection\pqreflection.csproj">
+      <Project>{7eb211b5-dc0a-48c5-9657-6e1ce654dfcf}</Project>
+      <Name>pqreflection</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

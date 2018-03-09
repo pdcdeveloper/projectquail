@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace pqlib.Reflection
+// The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
+// Assigning default values to generic types:
+// <see cref="https://msdn.microsoft.com/en-us/library/xwth0h0d.aspx"/>
+namespace pqreflection
 {
-    // The methods in this class can be used to retrieve the attributes of a given member (from a class, enum, struct, etc.)
-    // Assigning default values to generic types:
-    // <see cref="https://msdn.microsoft.com/en-us/library/xwth0h0d.aspx"/>
     public class AttributeHelper
     {
         public FieldInfo GetFieldInfo<T>(T member)
