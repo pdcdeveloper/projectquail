@@ -12,20 +12,24 @@ namespace pqappdatastorage.Models
     // A unique guid for your app is required to retrieve your app's background download operations.
     // Without a unique guid (per app), other installed applications may also retrieve any other application's background download operations.
     // Always associate a background task with your app's unique guid and use the same guid throught the application lifetime (from installation to uninstallation.)
-    public struct PersistentGuid
+    public sealed class PersistentGuid
     {
         Guid _appGuid;
         public Guid AppGuid { get => _appGuid == Guid.Empty ? _appGuid = GetGuid() : _appGuid; }
 
-        // Deserializes the existing guid value from the local settings container
-        // or creates a new guid if one does not exist.
+        public PersistentGuid()
+        {
+            // If the guid currently does not exist within the container, then generate a new guid for the application.
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey(nameof(AppGuid)))
+                _appGuid = (Guid)(ApplicationData.Current.LocalSettings.Values[nameof(AppGuid)] = Guid.NewGuid());
+            else
+                _appGuid = GetGuid();
+        }
+
+        // Deserializes the existing guid value from the local settings container.
         Guid GetGuid()
         {
-            var localSettings = ApplicationData.Current.LocalSettings;
-            if (localSettings.Values.ContainsKey(nameof(AppGuid)))
-                return (Guid)localSettings.Values[nameof(AppGuid)];
-            else
-                return (Guid)(localSettings.Values[nameof(AppGuid)] = Guid.NewGuid());
+            return (Guid)ApplicationData.Current.LocalSettings.Values[nameof(AppGuid)];
         }
     }
 }
