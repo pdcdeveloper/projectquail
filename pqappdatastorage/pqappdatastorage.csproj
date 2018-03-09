@@ -106,7 +106,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Models\LocalSettingsStorageBase.cs" />
+    <Compile Include="Models\ApplicationDataStorageBase.cs" />
+    <Compile Include="Models\PersistentGuid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\pqappdatastorage.rd.xml" />
   </ItemGroup>
