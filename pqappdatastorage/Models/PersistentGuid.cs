@@ -21,12 +21,12 @@ namespace pqappdatastorage.Models
         {
             // If the guid currently does not exist within the container, then generate a new guid for the application.
             if (!ApplicationData.Current.LocalSettings.Values.ContainsKey(nameof(AppGuid)))
-                ApplicationData.Current.LocalSettings.Values[nameof(AppGuid)] = Guid.NewGuid();
-
-            // Deserialize the guid value from the container.
-            _appGuid = GetGuid();
+                _appGuid = (Guid)(ApplicationData.Current.LocalSettings.Values[nameof(AppGuid)] = Guid.NewGuid());
+            else
+                _appGuid = GetGuid();
         }
 
+        // Deserializes the existing guid value from the local settings container.
         Guid GetGuid()
         {
             return (Guid)ApplicationData.Current.LocalSettings.Values[nameof(AppGuid)];
