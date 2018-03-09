@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using pqappstoreservices.Interfaces;
+using System;
 using System.Threading.Tasks;
 using Windows.Services.Store;
 using Windows.UI.Popups;
 
-namespace pqlib.AppStoreServices
+namespace pqappstoreservices.ViewModels
 {
     // Provides methods to automatically check for and install updates when you upload new packages to your app submission.
     // This implementation currently has no license checking.

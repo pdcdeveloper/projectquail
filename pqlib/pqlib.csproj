@@ -106,8 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AppStoreServices\AppUpdater.cs" />
-    <Compile Include="AppStoreServices\IAppUpdater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\pqlib.rd.xml" />
   </ItemGroup>
