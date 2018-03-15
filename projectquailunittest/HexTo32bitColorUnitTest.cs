@@ -26,6 +26,9 @@ namespace projectquailunittest
 
             if (!Byte.TryParse("", NumberStyles.HexNumber, null, out result))
                 Assert.IsTrue(result == Byte.MinValue);
+
+            if (!Byte.TryParse("fffzffff", NumberStyles.HexNumber, null, out result))
+                Assert.IsTrue(result == Byte.MinValue);
         }
     }
 }
