@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using pqhexhelper;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -30,5 +31,42 @@ namespace projectquailunittest
             if (!Byte.TryParse("fffzffff", NumberStyles.HexNumber, null, out result))
                 Assert.IsTrue(result == Byte.MinValue);
         }
+
+        [TestMethod]
+        public void HasValidHexCharacters_Test()
+        {
+            int index = 0;
+
+            string invalidLongLength = "fffffffff";
+            string invalidShortLength = "ff";
+            string invalidLengthWithHash = "#ff";
+            string invalidCharacters = "#abcdefgh";
+
+            string validCharacters = "fffffff1";
+            string validHex = "FFFFFFFF";
+            string validHexWithHash = "#FFFFFFFF";
+
+            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidLongLength, out index));
+            Assert.IsTrue(index == -1);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidShortLength, out index));
+            Assert.IsTrue(index == -1);
+            
+            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidLengthWithHash, out index));
+            Assert.IsTrue(index == -1);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidCharacters, out index));
+            Assert.IsTrue(index == -1);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(validCharacters, out index));
+            Assert.IsTrue(index == 0);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(validHex, out index));
+            Assert.IsTrue(index == 0);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(validHexWithHash, out index));
+            Assert.IsTrue(index == 1);
+        }
+
     }
 }
