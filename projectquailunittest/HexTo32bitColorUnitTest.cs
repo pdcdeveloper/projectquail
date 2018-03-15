@@ -46,25 +46,25 @@ namespace projectquailunittest
             string validHex = "FFFFFFFF";
             string validHexWithHash = "#FFFFFFFF";
 
-            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidLongLength, out index));
+            Assert.IsFalse(HexTo32bitColor.TryGetValidateStartingIndex(invalidLongLength, out index));
             Assert.IsTrue(index == -1);
 
-            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidShortLength, out index));
+            Assert.IsFalse(HexTo32bitColor.TryGetValidateStartingIndex(invalidShortLength, out index));
             Assert.IsTrue(index == -1);
             
-            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidLengthWithHash, out index));
+            Assert.IsFalse(HexTo32bitColor.TryGetValidateStartingIndex(invalidLengthWithHash, out index));
             Assert.IsTrue(index == -1);
 
-            Assert.IsFalse(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(invalidCharacters, out index));
+            Assert.IsFalse(HexTo32bitColor.TryGetValidateStartingIndex(invalidCharacters, out index));
             Assert.IsTrue(index == -1);
 
-            Assert.IsTrue(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(validCharacters, out index));
+            Assert.IsTrue(HexTo32bitColor.TryGetValidateStartingIndex(validCharacters, out index));
             Assert.IsTrue(index == 0);
 
-            Assert.IsTrue(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(validHex, out index));
+            Assert.IsTrue(HexTo32bitColor.TryGetValidateStartingIndex(validHex, out index));
             Assert.IsTrue(index == 0);
 
-            Assert.IsTrue(HexTo32bitColor.TryGetIndexByValidatingHexSyntax(validHexWithHash, out index));
+            Assert.IsTrue(HexTo32bitColor.TryGetValidateStartingIndex(validHexWithHash, out index));
             Assert.IsTrue(index == 1);
         }
 
