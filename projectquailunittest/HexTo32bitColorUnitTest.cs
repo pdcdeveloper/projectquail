@@ -12,6 +12,16 @@ namespace projectquailunittest
     [TestClass]
     public class HexTo32bitColorUnitTest
     {
+        const string _invalidSignAtBeginning = "-aBbCcDd";
+        const string _invalidSignAtBeginningWithHash = "#-aBbCcDd";
+        const string _invalidCharacterAtEnd = "AaBbCcD_";
+        const string _invalidCharacterAtEndWithHash = "#AaBbCcD-";
+        const string _invalidLengthShort = "a";
+        const string _invalidLengthLong = "AAAAAAAAAAAAAA";
+        const string _invalidAlphaWithHash = "#zaBbCcDd";
+        const string _validColorWithHash = "#AaBbCcDd";
+        const string _validColor = "AaBbCcDd";
+
         [TestMethod]
         public void Byte_TryParseTest()
         {
@@ -66,6 +76,88 @@ namespace projectquailunittest
 
             Assert.IsTrue(HexTo32bitColor.TryGetValidateStartingIndex(validHexWithHash, out index));
             Assert.IsTrue(index == 1);
+        }
+
+        [TestMethod]
+        public void TryGetArgb_Test()
+        {
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidSignAtBeginning, out var argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidSignAtBeginningWithHash, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidCharacterAtEnd, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidCharacterAtEndWithHash, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidLengthShort, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidLengthLong, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidAlphaWithHash, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetArgb(_validColorWithHash, out argb));
+            Assert.IsFalse(argb.alpha == Byte.MinValue);
+            Assert.IsFalse(argb.red == Byte.MinValue);
+            Assert.IsFalse(argb.green == Byte.MinValue);
+            Assert.IsFalse(argb.blue == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetArgb(_validColor, out argb));
+            Assert.IsFalse(argb.alpha == Byte.MinValue);
+            Assert.IsFalse(argb.red == Byte.MinValue);
+            Assert.IsFalse(argb.green == Byte.MinValue);
+            Assert.IsFalse(argb.blue == Byte.MinValue);
+        }
+
+        [TestMethod]
+        public void TryGetAlpha_Test()
+        {
+
+        }
+
+        [TestMethod]
+        public void TryGetRed_Test()
+        {
+
+        }
+
+        [TestMethod]
+        public void TryGetGreen_Test()
+        {
+
+        }
+
+        [TestMethod]
+        public void TryGetBlue_Test()
+        {
+
         }
 
     }
