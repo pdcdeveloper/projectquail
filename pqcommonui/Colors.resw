@@ -117,12 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GenericBackgroundColor" xml:space="preserve">
+  <data name="GenericBackground" xml:space="preserve">
     <value>#FF171717</value>
     <comment>Dark grey</comment>
   </data>
-  <data name="GenericForegroundColor" xml:space="preserve">
-    <value />
+  <data name="GenericForeground" xml:space="preserve">
+    <value>#FFFFDAB9</value>
     <comment>Windows.UI.Colors.PeachPuff</comment>
+  </data>
+  <data name="GenericInteract" xml:space="preserve">
+    <value>#FF1E90FF</value>
+    <comment>Windows.UI.Colors.DodgerBlue</comment>
   </data>
 </root>

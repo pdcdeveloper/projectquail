@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>\xE946</value>
   </data>
+  <data name="Add" xml:space="preserve">
+    <value>\xE710</value>
+  </data>
   <data name="AdditionalSearch" xml:space="preserve">
     <value>\xE12E</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="Download" xml:space="preserve">
     <value>\xE118</value>
   </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>\xE728</value>
+  </data>
   <data name="FilingBox" xml:space="preserve">
     <value>\xE7B8</value>
   </data>
@@ -195,17 +201,32 @@
   <data name="Like" xml:space="preserve">
     <value>\xE19F</value>
   </data>
+  <data name="LoginHamburger" xml:space="preserve">
+    <value>\xE779</value>
+  </data>
+  <data name="Minus" xml:space="preserve">
+    <value>\xE108</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>\xE10C</value>
+  </data>
   <data name="MoveDown" xml:space="preserve">
     <value>\xE92F</value>
   </data>
   <data name="MoveUp" xml:space="preserve">
     <value>\xE78B</value>
   </data>
+  <data name="MultipleUsers" xml:space="preserve">
+    <value>\xE125</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>\xE29B</value>
   </data>
   <data name="Playlist" xml:space="preserve">
     <value>\xE142</value>
+  </data>
+  <data name="Reading" xml:space="preserve">
+    <value>\xE7BC</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>\xE721</value>
@@ -221,6 +242,9 @@
   </data>
   <data name="ShowMore" xml:space="preserve">
     <value>\xE291</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>\xE706</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>\xE2AC</value>
