@@ -18,7 +18,13 @@ namespace projectquailunittest
         const string _invalidCharacterAtEndWithHash = "#AaBbCcD-";
         const string _invalidLengthShort = "a";
         const string _invalidLengthLong = "AAAAAAAAAAAAAA";
+
         const string _invalidAlphaWithHash = "#zaBbCcDd";
+        const string _invalidRedWithHash = "#AaB+CcDd";
+        const string _invalidGreenWithHash = "#AaBb/cDd";
+        const string _invalidBlueWithHash = "#AaBbCcD{";
+
+
         const string _validColorWithHash = "#AaBbCcDd";
         const string _validColor = "AaBbCcDd";
 
@@ -123,6 +129,24 @@ namespace projectquailunittest
             Assert.IsTrue(argb.green == Byte.MinValue);
             Assert.IsTrue(argb.blue == Byte.MinValue);
 
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidRedWithHash, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidGreenWithHash, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetArgb(_invalidBlueWithHash, out argb));
+            Assert.IsTrue(argb.alpha == Byte.MinValue);
+            Assert.IsTrue(argb.red == Byte.MinValue);
+            Assert.IsTrue(argb.green == Byte.MinValue);
+            Assert.IsTrue(argb.blue == Byte.MinValue);
+
             Assert.IsTrue(HexTo32bitColor.TryGetArgb(_validColorWithHash, out argb));
             Assert.IsFalse(argb.alpha == Byte.MinValue);
             Assert.IsFalse(argb.red == Byte.MinValue);
@@ -139,25 +163,125 @@ namespace projectquailunittest
         [TestMethod]
         public void TryGetAlpha_Test()
         {
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidSignAtBeginning, out var alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
 
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidSignAtBeginningWithHash, out alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidCharacterAtEnd, out alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidCharacterAtEndWithHash, out alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidLengthShort, out alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidLengthLong, out alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetAlpha(_invalidAlphaWithHash, out alpha));
+            Assert.IsTrue(alpha == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetAlpha(_validColorWithHash, out alpha));
+            Assert.IsFalse(alpha == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetAlpha(_validColor, out alpha));
+            Assert.IsFalse(alpha == Byte.MinValue);
         }
 
         [TestMethod]
         public void TryGetRed_Test()
         {
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidSignAtBeginning, out var red));
+            Assert.IsTrue(red == Byte.MinValue);
 
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidSignAtBeginningWithHash, out red));
+            Assert.IsTrue(red == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidCharacterAtEnd, out red));
+            Assert.IsTrue(red == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidCharacterAtEndWithHash, out red));
+            Assert.IsTrue(red == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidLengthShort, out red));
+            Assert.IsTrue(red == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidLengthLong, out red));
+            Assert.IsTrue(red == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetRed(_invalidRedWithHash, out red));
+            Assert.IsTrue(red == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetRed(_validColorWithHash, out red));
+            Assert.IsFalse(red == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetRed(_validColor, out red));
+            Assert.IsFalse(red == Byte.MinValue);
         }
 
         [TestMethod]
         public void TryGetGreen_Test()
         {
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidSignAtBeginning, out var green));
+            Assert.IsTrue(green == Byte.MinValue);
 
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidSignAtBeginningWithHash, out green));
+            Assert.IsTrue(green == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidCharacterAtEnd, out green));
+            Assert.IsTrue(green == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidCharacterAtEndWithHash, out green));
+            Assert.IsTrue(green == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidLengthShort, out green));
+            Assert.IsTrue(green == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidLengthLong, out green));
+            Assert.IsTrue(green == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetGreen(_invalidGreenWithHash, out green));
+            Assert.IsTrue(green == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetGreen(_validColorWithHash, out green));
+            Assert.IsFalse(green == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetGreen(_validColor, out green));
+            Assert.IsFalse(green == Byte.MinValue);
         }
 
         [TestMethod]
         public void TryGetBlue_Test()
         {
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidSignAtBeginning, out var blue));
+            Assert.IsTrue(blue == Byte.MinValue);
 
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidSignAtBeginningWithHash, out blue));
+            Assert.IsTrue(blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidCharacterAtEnd, out blue));
+            Assert.IsTrue(blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidCharacterAtEndWithHash, out blue));
+            Assert.IsTrue(blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidLengthShort, out blue));
+            Assert.IsTrue(blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidLengthLong, out blue));
+            Assert.IsTrue(blue == Byte.MinValue);
+
+            Assert.IsFalse(HexTo32bitColor.TryGetBlue(_invalidBlueWithHash, out blue));
+            Assert.IsTrue(blue == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetBlue(_validColorWithHash, out blue));
+            Assert.IsFalse(blue == Byte.MinValue);
+
+            Assert.IsTrue(HexTo32bitColor.TryGetBlue(_validColor, out blue));
+            Assert.IsFalse(blue == Byte.MinValue);
         }
 
     }

@@ -18,15 +18,6 @@ namespace pqhexhelper
             if (!TryGetValidateStartingIndex(hex, out int startingIndex))
                 return false;
 
-            //if (!Byte.TryParse(hex.Substring(startingIndex + 0, 2), NumberStyles.HexNumber, null, out argb.alpha))
-            //    return false;
-            //if (!Byte.TryParse(hex.Substring(startingIndex + 2, 2), NumberStyles.HexNumber, null, out argb.red))
-            //    return false;
-            //if (!Byte.TryParse(hex.Substring(startingIndex + 4, 2), NumberStyles.HexNumber, null, out argb.green))
-            //    return false;
-            //if (!Byte.TryParse(hex.Substring(startingIndex + 6, 2), NumberStyles.HexNumber, null, out argb.blue))
-            //    return false;
-
             argb.alpha = Byte.Parse(hex.Substring(startingIndex + 0, 2), NumberStyles.HexNumber);
             argb.red = Byte.Parse(hex.Substring(startingIndex + 2, 2), NumberStyles.HexNumber);
             argb.green = Byte.Parse(hex.Substring(startingIndex + 4, 2), NumberStyles.HexNumber);
