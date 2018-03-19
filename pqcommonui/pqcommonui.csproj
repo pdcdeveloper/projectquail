@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA1827AD-2191-4A54-AED4-42CB1203632E}</ProjectGuid>
+    <ProjectGuid>{6E253200-DDF0-47B5-AB41-598BB06A1CDB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>pqhexhelper</RootNamespace>
-    <AssemblyName>pqhexhelper</AssemblyName>
+    <RootNamespace>pqcommonui</RootNamespace>
+    <AssemblyName>pqcommonui</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
@@ -106,9 +106,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HexTo32bitColor.cs" />
+    <Compile Include="Helpers\HexTo32bitColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\pqhexhelper.rd.xml" />
+    <EmbeddedResource Include="Properties\pqcommonui.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

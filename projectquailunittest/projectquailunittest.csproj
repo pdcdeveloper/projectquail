@@ -146,9 +146,9 @@
       <Project>{d01b7b7c-ff22-4bf3-a80f-78f0fde1dd7a}</Project>
       <Name>pqappdatastorage</Name>
     </ProjectReference>
-    <ProjectReference Include="..\pqhexhelper\pqhexhelper.csproj">
-      <Project>{da1827ad-2191-4a54-aed4-42cb1203632e}</Project>
-      <Name>pqhexhelper</Name>
+    <ProjectReference Include="..\pqcommonui\pqcommonui.csproj">
+      <Project>{6e253200-ddf0-47b5-ab41-598bb06a1cdb}</Project>
+      <Name>pqcommonui</Name>
     </ProjectReference>
     <ProjectReference Include="..\pqlocalization\pqlocalization.csproj">
       <Project>{119e207d-fbf3-4fbd-8399-470678446007}</Project>

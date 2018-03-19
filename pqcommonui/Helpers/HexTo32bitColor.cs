@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
-namespace pqhexhelper
+namespace pqcommonui.Helpers
 {
     // Provides methods to parse hex strings (syntax "#FFFFFFFF" or "FFFFFFFF") into 'Windows.UI.Color' or into separate argb byte values.
     public static class HexTo32bitColor
@@ -43,7 +39,7 @@ namespace pqhexhelper
                     return true;
             return false;
         }
-        
+
         public static bool TryGetGreen(this string hex, out byte green)
         {
             green = Byte.MinValue;
@@ -95,7 +91,7 @@ namespace pqhexhelper
                 return blue;
             return Byte.MinValue;
         }
-        
+
         public static bool TryGetValidateStartingIndex(this string hex, out int startingIndex)
         {
             startingIndex = -1;
@@ -125,6 +121,5 @@ namespace pqhexhelper
 
             return true;
         }
-
     }
 }
