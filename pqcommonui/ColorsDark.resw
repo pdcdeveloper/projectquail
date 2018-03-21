@@ -150,7 +150,7 @@
     <comment>Windows.UI.Colors.Plum</comment>
   </data>
   <data name="VideoTitle" xml:space="preserve">
-    <value>#FFE0FFFF</value>
+    <value>#FF00FFFF</value>
     <comment>Windows.UI.Colors.Cyan</comment>
   </data>
 </root>
