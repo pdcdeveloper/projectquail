@@ -117,6 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Huge.DecodePixelHeight" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Huge.DecodePixelWidth" xml:space="preserve">
+    <value>320</value>
+    <comment>Windows.UI.Xaml.Media.Imaging.BitmapImage</comment>
+  </data>
+  <data name="Huge.MaxHeight" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Huge.MaxWidth" xml:space="preserve">
+    <value>320</value>
+    <comment>Windows.UI.Xaml.FrameworkElement</comment>
+  </data>
+  <data name="Large.DecodePixelHeight" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="Large.DecodePixelWidth" xml:space="preserve">
+    <value>256</value>
+  </data>
+  <data name="Large.MaxHeight" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="Large.MaxWidth" xml:space="preserve">
+    <value>256</value>
+  </data>
+  <data name="Medium.DecodePixelHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Medium.DecodePixelWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Medium.MaxHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Medium.MaxWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Mini.DecodePixelHeight" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Mini.DecodePixelWidth" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Mini.MaxHeight" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Mini.MaxWidth" xml:space="preserve">
+    <value>50</value>
+  </data>
   <data name="Resolution1000x600.MinWindowHeight" xml:space="preserve">
     <value>600</value>
   </data>
@@ -153,6 +203,18 @@
   <data name="Resolution1440x864.MinWindowWidth" xml:space="preserve">
     <value>1440</value>
   </data>
+  <data name="Resolution1560x936.DecodePixelHeight" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="Resolution1560x936.DecodePixelWidth" xml:space="preserve">
+    <value>256</value>
+  </data>
+  <data name="Resolution1560x936.MaxHeight" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="Resolution1560x936.MaxWidth" xml:space="preserve">
+    <value>256</value>
+  </data>
   <data name="Resolution1560x936.MinWindowHeight" xml:space="preserve">
     <value>936</value>
   </data>
@@ -164,6 +226,18 @@
   </data>
   <data name="Resolution1620x972.MinWindowWidth" xml:space="preserve">
     <value>1620</value>
+  </data>
+  <data name="Resolution1665x999.DecodePixelHeight" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Resolution1665x999.DecodePixelWidth" xml:space="preserve">
+    <value>320</value>
+  </data>
+  <data name="Resolution1665x999.MaxHeight" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Resolution1665x999.MaxWidth" xml:space="preserve">
+    <value>320</value>
   </data>
   <data name="Resolution1665x999.MinWindowHeight" xml:space="preserve">
     <value>999</value>
@@ -189,11 +263,53 @@
   <data name="Resolution1800x1080.MinWindowWidth" xml:space="preserve">
     <value>1800</value>
   </data>
+  <data name="Resolution1x1.DecodePixelHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution1x1.DecodePixelWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Resolution1x1.MaxHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution1x1.MaxWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Resolution1x1.MinWindowHeight" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Resolution1x1.MinWindowWidth" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Resolution450x270.DecodePixelHeight" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="Resolution450x270.DecodePixelWidth" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Resolution450x270.MaxHeight" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="Resolution450x270.MaxWidth" xml:space="preserve">
+    <value>160</value>
+  </data>
   <data name="Resolution450x270.MinWindowHeight" xml:space="preserve">
     <value>270</value>
   </data>
   <data name="Resolution450x270.MinWindowWidth" xml:space="preserve">
     <value>450</value>
+  </data>
+  <data name="Resolution480x288.DecodePixelHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution480x288.DecodePixelWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Resolution480x288.MaxWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Resolution480x288.MinHeight" xml:space="preserve">
+    <value>108</value>
   </data>
   <data name="Resolution480x288.MinWindowHeight" xml:space="preserve">
     <value>288</value>
@@ -207,11 +323,35 @@
   <data name="Resolution525x315.MinWindowWidth" xml:space="preserve">
     <value>525</value>
   </data>
+  <data name="Resolution600x360.DecodePixelHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution600x360.DecodePixelWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Resolution600x360.MaxHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution600x360.MaxWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
   <data name="Resolution600x360.MinWindowHeight" xml:space="preserve">
     <value>360</value>
   </data>
   <data name="Resolution600x360.MinWindowWidth" xml:space="preserve">
     <value>600</value>
+  </data>
+  <data name="Resolution675x405.DecodePixelHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution675x405.DecodePixelWidth" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="Resolution675x405.MaxHeight" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="Resolution675x405.MaxWidth" xml:space="preserve">
+    <value>192</value>
   </data>
   <data name="Resolution675x405.MinWindowHeight" xml:space="preserve">
     <value>405</value>
@@ -225,6 +365,18 @@
   <data name="Resolution720x432.MinWindowWidth" xml:space="preserve">
     <value>720</value>
   </data>
+  <data name="Resolution795x477.DecodePixelHeight" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="Resolution795x477.DecodePixelWidth" xml:space="preserve">
+    <value>256</value>
+  </data>
+  <data name="Resolution795x477.MaxHeight" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="Resolution795x477.MaxWidth" xml:space="preserve">
+    <value>256</value>
+  </data>
   <data name="Resolution795x477.MinWindowHeight" xml:space="preserve">
     <value>477</value>
   </data>
@@ -237,17 +389,56 @@
   <data name="Resolution840x504.MinWindowWidth" xml:space="preserve">
     <value>840</value>
   </data>
+  <data name="Resolution900x540.DecodePixelHeight" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Resolution900x540.DecodePixelWidth" xml:space="preserve">
+    <value>320</value>
+    <comment>Windows.UI.Xaml.Media.Imaging.BitmapImage</comment>
+  </data>
+  <data name="Resolution900x540.MaxHeight" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Resolution900x540.MaxWidth" xml:space="preserve">
+    <value>320</value>
+    <comment>Windows.UI.Xaml.FrameworkElement</comment>
+  </data>
   <data name="Resolution900x540.MinWindowHeight" xml:space="preserve">
     <value>540</value>
+    <comment>Based off 15:9 aspect ratio for 16:9 resolutions</comment>
   </data>
   <data name="Resolution900x540.MinWindowWidth" xml:space="preserve">
     <value>900</value>
+    <comment>Windows.UI.Xaml.AdaptiveTrigger</comment>
   </data>
   <data name="Resolution960x576.MinWindowHeight" xml:space="preserve">
     <value>576</value>
   </data>
   <data name="Resolution960x576.MinWindowWidth" xml:space="preserve">
     <value>960</value>
-    <comment>Based off 15:9 aspect ratio for 16:9 resolutions</comment>
+  </data>
+  <data name="Small.DecodePixelHeight" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="Small.DecodePixelWidth" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Small.MaxHeight" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="Small.MaxWidth" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Tiny.DecodePixelHeight" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="Tiny.DecodePixelWidth" xml:space="preserve">
+    <value>128</value>
+  </data>
+  <data name="Tiny.MaxHeight" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="Tiny.MaxWidth" xml:space="preserve">
+    <value>128</value>
   </data>
 </root>

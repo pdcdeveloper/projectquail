@@ -116,7 +116,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Icons.resw" />
+    <PRIResource Include="SegoeMDL2Icons.resw" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="ColorsDark.resw" />
