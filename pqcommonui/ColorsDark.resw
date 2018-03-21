@@ -118,8 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChannelTitle" xml:space="preserve">
-    <value />
+    <value>#FFFF7F50</value>
     <comment>Windows.UI.Colors.Coral</comment>
+  </data>
+  <data name="CommentAuthor" xml:space="preserve">
+    <value>#FF1E90FF</value>
+    <comment>Windows.UI.Colors.DodgerBlue</comment>
+  </data>
+  <data name="CommentThreadAuthor" xml:space="preserve">
+    <value>#FF00BFFF</value>
+    <comment>Windows.UI.Colors.DeepSkyBlue</comment>
   </data>
   <data name="GenericBackground" xml:space="preserve">
     <value>#FF171717</value>
@@ -132,5 +140,17 @@
   <data name="GenericInteract" xml:space="preserve">
     <value>#FF1E90FF</value>
     <comment>Windows.UI.Colors.DodgerBlue</comment>
+  </data>
+  <data name="PlaylistItemTitle" xml:space="preserve">
+    <value>#FF9370DB</value>
+    <comment>Windows.UI.Colors.MediumPurple</comment>
+  </data>
+  <data name="PlaylistTitle" xml:space="preserve">
+    <value>#FFDDA0DD</value>
+    <comment>Windows.UI.Colors.Plum</comment>
+  </data>
+  <data name="VideoTitle" xml:space="preserve">
+    <value>#FFE0FFFF</value>
+    <comment>Windows.UI.Colors.Cyan</comment>
   </data>
 </root>
