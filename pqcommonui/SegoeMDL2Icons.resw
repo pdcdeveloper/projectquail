@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>\xE946</value>
+    <comment>FontFamily.Value ="Segoe MDL2 Assets"</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>\xE710</value>
+  </data>
+  <data name="AdditionalSearch" xml:space="preserve">
+    <value>\xE12E</value>
+  </data>
+  <data name="ArrowDown" xml:space="preserve">
+    <value>\xE011</value>
+  </data>
+  <data name="ArrowUp" xml:space="preserve">
+    <value>\xE010</value>
+  </data>
+  <data name="Calendar" xml:space="preserve">
+    <value>\xE163</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>\xE10A</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>\xE1E4</value>
+  </data>
+  <data name="ChatBubble" xml:space="preserve">
+    <value>\xE206</value>
+  </data>
+  <data name="ChatCount" xml:space="preserve">
+    <value>\xE8F2</value>
+  </data>
+  <data name="ChatWith" xml:space="preserve">
+    <value>\xE939</value>
+  </data>
+  <data name="Checkbox" xml:space="preserve">
+    <value>\xE003</value>
+  </data>
+  <data name="CheckedBox" xml:space="preserve">
+    <value>\xE0A2</value>
+  </data>
+  <data name="Checkmark" xml:space="preserve">
+    <value>\xE10B</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>\xE750</value>
+  </data>
+  <data name="Clipboard" xml:space="preserve">
+    <value>\xE77F</value>
+  </data>
+  <data name="Clock" xml:space="preserve">
+    <value>\xE2AD</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>\xE13D</value>
+  </data>
+  <data name="Dislike" xml:space="preserve">
+    <value>\xE19E</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>\xE118</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>\xE728</value>
+  </data>
+  <data name="FilingBox" xml:space="preserve">
+    <value>\xE7B8</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>\xE16E</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>\xE155</value>
+  </data>
+  <data name="Flag" xml:space="preserve">
+    <value>\xE129</value>
+  </data>
+  <data name="Hamburger" xml:space="preserve">
+    <value>\xE700</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>\xE10F</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>\xE19F</value>
+  </data>
+  <data name="LoginHamburger" xml:space="preserve">
+    <value>\xE779</value>
+  </data>
+  <data name="Minus" xml:space="preserve">
+    <value>\xE108</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>\xE10C</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>\xE92F</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>\xE78B</value>
+  </data>
+  <data name="MultipleUsers" xml:space="preserve">
+    <value>\xE125</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>\xE29B</value>
+  </data>
+  <data name="Playlist" xml:space="preserve">
+    <value>\xE142</value>
+  </data>
+  <data name="Reading" xml:space="preserve">
+    <value>\xE7BC</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>\xE721</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>\xE115</value>
+  </data>
+  <data name="Ship" xml:space="preserve">
+    <value>\xE7E3</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>\xE290</value>
+  </data>
+  <data name="ShowMore" xml:space="preserve">
+    <value>\xE291</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>\xE706</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>\xE2AC</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>\xE116</value>
+  </data>
+</root>
