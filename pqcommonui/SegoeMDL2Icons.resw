@@ -178,6 +178,9 @@
   <data name="Download" xml:space="preserve">
     <value>\xE118</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>\xE783</value>
+  </data>
   <data name="Favorites" xml:space="preserve">
     <value>\xE728</value>
   </data>
@@ -220,6 +223,9 @@
   <data name="MultipleUsers" xml:space="preserve">
     <value>\xE125</value>
   </data>
+  <data name="Pause" xml:space="preserve">
+    <value>\xE103</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>\xE29B</value>
   </data>
@@ -228,6 +234,9 @@
   </data>
   <data name="Reading" xml:space="preserve">
     <value>\xE7BC</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>\xE149</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>\xE721</value>
