@@ -2,6 +2,9 @@
 using pqcommonui.Helpers;
 using System;
 using System.Globalization;
+using Microsoft.Toolkit.Uwp.Helpers;
+using Windows.ApplicationModel.Resources;
+using Windows.UI;
 
 namespace projectquailunittest
 {
@@ -278,6 +281,24 @@ namespace projectquailunittest
 
             Assert.IsTrue(HexTo32bitColor.TryGetBlue(_validColor, out blue));
             Assert.IsFalse(blue == Byte.MinValue);
+        }
+
+        [TestMethod]
+        public void ColorToolkit_ResourceTest()
+        {
+            // Get argb.
+            ResourceLoader resourceLoader = ResourceLoader.GetForViewIndependentUse("pqcommonui/ColorsDark");
+            var colorResource = resourceLoader.GetString("ChannelTitle");
+            var convertedColor = colorResource.ToColor();
+            Assert.IsTrue(convertedColor == Colors.Coral);
+            Assert.IsTrue(convertedColor.ToString() == "#FFFF7F50");
+
+            colorResource = resourceLoader.GetString("GenericBackground");
+            convertedColor = colorResource.ToColor();
+            if (HexTo32bitColor.TryGetArgb("#FF171717", out var argb))
+                Assert.IsTrue(convertedColor == Color.FromArgb(argb.alpha, argb.red, argb.green, argb.blue));
+            else
+                Assert.Fail();
         }
 
     }
