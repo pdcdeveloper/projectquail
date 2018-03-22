@@ -117,54 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Huge.DecodePixelHeight" xml:space="preserve">
+  <data name="Huge320x180.DecodePixelHeight" xml:space="preserve">
     <value>180</value>
   </data>
-  <data name="Huge.DecodePixelWidth" xml:space="preserve">
+  <data name="Huge320x180.DecodePixelWidth" xml:space="preserve">
     <value>320</value>
     <comment>Windows.UI.Xaml.Media.Imaging.BitmapImage</comment>
   </data>
-  <data name="Huge.MaxHeight" xml:space="preserve">
+  <data name="Huge320x180.MaxHeight" xml:space="preserve">
     <value>180</value>
   </data>
-  <data name="Huge.MaxWidth" xml:space="preserve">
+  <data name="Huge320x180.MaxWidth" xml:space="preserve">
     <value>320</value>
     <comment>Windows.UI.Xaml.FrameworkElement</comment>
   </data>
-  <data name="Large.DecodePixelHeight" xml:space="preserve">
+  <data name="Large256x144.DecodePixelHeight" xml:space="preserve">
     <value>144</value>
   </data>
-  <data name="Large.DecodePixelWidth" xml:space="preserve">
+  <data name="Large256x144.DecodePixelWidth" xml:space="preserve">
     <value>256</value>
   </data>
-  <data name="Large.MaxHeight" xml:space="preserve">
+  <data name="Large256x144.MaxHeight" xml:space="preserve">
     <value>144</value>
   </data>
-  <data name="Large.MaxWidth" xml:space="preserve">
+  <data name="Large256x144.MaxWidth" xml:space="preserve">
     <value>256</value>
   </data>
-  <data name="Medium.DecodePixelHeight" xml:space="preserve">
+  <data name="Medium192x108.DecodePixelHeight" xml:space="preserve">
     <value>108</value>
   </data>
-  <data name="Medium.DecodePixelWidth" xml:space="preserve">
+  <data name="Medium192x108.DecodePixelWidth" xml:space="preserve">
     <value>192</value>
   </data>
-  <data name="Medium.MaxHeight" xml:space="preserve">
+  <data name="Medium192x108.MaxHeight" xml:space="preserve">
     <value>108</value>
   </data>
-  <data name="Medium.MaxWidth" xml:space="preserve">
+  <data name="Medium192x108.MaxWidth" xml:space="preserve">
     <value>192</value>
   </data>
-  <data name="Mini.DecodePixelHeight" xml:space="preserve">
+  <data name="Mini50x50.DecodePixelHeight" xml:space="preserve">
     <value>50</value>
   </data>
-  <data name="Mini.DecodePixelWidth" xml:space="preserve">
+  <data name="Mini50x50.DecodePixelWidth" xml:space="preserve">
     <value>50</value>
   </data>
-  <data name="Mini.MaxHeight" xml:space="preserve">
+  <data name="Mini50x50.MaxHeight" xml:space="preserve">
     <value>50</value>
   </data>
-  <data name="Mini.MaxWidth" xml:space="preserve">
+  <data name="Mini50x50.MaxWidth" xml:space="preserve">
     <value>50</value>
   </data>
   <data name="Resolution1000x600.MinWindowHeight" xml:space="preserve">
@@ -417,28 +417,28 @@
   <data name="Resolution960x576.MinWindowWidth" xml:space="preserve">
     <value>960</value>
   </data>
-  <data name="Small.DecodePixelHeight" xml:space="preserve">
+  <data name="Small160x90.DecodePixelHeight" xml:space="preserve">
     <value>90</value>
   </data>
-  <data name="Small.DecodePixelWidth" xml:space="preserve">
+  <data name="Small160x90.DecodePixelWidth" xml:space="preserve">
     <value>160</value>
   </data>
-  <data name="Small.MaxHeight" xml:space="preserve">
+  <data name="Small160x90.MaxHeight" xml:space="preserve">
     <value>90</value>
   </data>
-  <data name="Small.MaxWidth" xml:space="preserve">
+  <data name="Small160x90.MaxWidth" xml:space="preserve">
     <value>160</value>
   </data>
-  <data name="Tiny.DecodePixelHeight" xml:space="preserve">
+  <data name="Tiny128x72.DecodePixelHeight" xml:space="preserve">
     <value>72</value>
   </data>
-  <data name="Tiny.DecodePixelWidth" xml:space="preserve">
+  <data name="Tiny128x72.DecodePixelWidth" xml:space="preserve">
     <value>128</value>
   </data>
-  <data name="Tiny.MaxHeight" xml:space="preserve">
+  <data name="Tiny128x72.MaxHeight" xml:space="preserve">
     <value>72</value>
   </data>
-  <data name="Tiny.MaxWidth" xml:space="preserve">
+  <data name="Tiny128x72.MaxWidth" xml:space="preserve">
     <value>128</value>
   </data>
 </root>
