@@ -1,0 +1,538 @@
+﻿{
+  "items": [
+    {
+      "snippet": {
+        "gl": "US",
+        "name": "Worldwide (All)"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "DZ",
+        "name": "Algeria"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "AR",
+        "name": "Argentina"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "AU",
+        "name": "Australia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "AT",
+        "name": "Austria"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "AZ",
+        "name": "Azerbaijan"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "BH",
+        "name": "Bahrain"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "BY",
+        "name": "Belarus"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "BE",
+        "name": "Belgium"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "BA",
+        "name": "Bosnia and Herzegovina"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "BR",
+        "name": "Brazil"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "BG",
+        "name": "Bulgaria"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "CA",
+        "name": "Canada"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "CL",
+        "name": "Chile"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "CO",
+        "name": "Colombia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "HR",
+        "name": "Croatia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "CZ",
+        "name": "Czech Republic"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "DK",
+        "name": "Denmark"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "EG",
+        "name": "Egypt"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "EE",
+        "name": "Estonia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "FI",
+        "name": "Finland"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "FR",
+        "name": "France"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "GE",
+        "name": "Georgia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "DE",
+        "name": "Germany"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "GH",
+        "name": "Ghana"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "GR",
+        "name": "Greece"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "HK",
+        "name": "Hong Kong"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "HU",
+        "name": "Hungary"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "IS",
+        "name": "Iceland"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "IN",
+        "name": "India"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "ID",
+        "name": "Indonesia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "IQ",
+        "name": "Iraq"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "IE",
+        "name": "Ireland"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "IL",
+        "name": "Israel"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "IT",
+        "name": "Italy"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "JP",
+        "name": "Japan"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "JO",
+        "name": "Jordan"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "KZ",
+        "name": "Kazakhstan"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "KE",
+        "name": "Kenya"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "KW",
+        "name": "Kuwait"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "LV",
+        "name": "Latvia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "LB",
+        "name": "Lebanon"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "LY",
+        "name": "Libya"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "LT",
+        "name": "Lithuania"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "LU",
+        "name": "Luxembourg"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "MK",
+        "name": "Macedonia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "MY",
+        "name": "Malaysia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "MX",
+        "name": "Mexico"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "ME",
+        "name": "Montenegro"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "MA",
+        "name": "Morocco"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "NP",
+        "name": "Nepal"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "NL",
+        "name": "Netherlands"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "NZ",
+        "name": "New Zealand"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "NG",
+        "name": "Nigeria"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "NO",
+        "name": "Norway"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "OM",
+        "name": "Oman"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "PK",
+        "name": "Pakistan"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "PE",
+        "name": "Peru"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "PH",
+        "name": "Philippines"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "PL",
+        "name": "Poland"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "PT",
+        "name": "Portugal"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "PR",
+        "name": "Puerto Rico"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "QA",
+        "name": "Qatar"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "RO",
+        "name": "Romania"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "RU",
+        "name": "Russia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "SA",
+        "name": "Saudi Arabia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "SN",
+        "name": "Senegal"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "RS",
+        "name": "Serbia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "SG",
+        "name": "Singapore"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "SK",
+        "name": "Slovakia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "SI",
+        "name": "Slovenia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "ZA",
+        "name": "South Africa"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "KR",
+        "name": "South Korea"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "ES",
+        "name": "Spain"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "LK",
+        "name": "Sri Lanka"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "SE",
+        "name": "Sweden"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "CH",
+        "name": "Switzerland"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "TW",
+        "name": "Taiwan"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "TZ",
+        "name": "Tanzania"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "TH",
+        "name": "Thailand"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "TN",
+        "name": "Tunisia"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "TR",
+        "name": "Turkey"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "UG",
+        "name": "Uganda"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "UA",
+        "name": "Ukraine"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "AE",
+        "name": "United Arab Emirates"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "GB",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "VN",
+        "name": "Vietnam"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "YE",
+        "name": "Yemen"
+      }
+    },
+    {
+      "snippet": {
+        "gl": "ZW",
+        "name": "Zimbabwe"
+      }
+    }
+  ]
+}
