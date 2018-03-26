@@ -26,6 +26,8 @@ namespace projectquail
     /// </summary>
     sealed partial class App : Application
     {
+        public const string InvalidFileNameCharacters = @"[\x5C\/:*?\x22<\>|]";
+
         IAppUpdater _appUpdater;
 
         /// <summary>
