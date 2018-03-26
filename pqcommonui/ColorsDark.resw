@@ -131,7 +131,11 @@
   </data>
   <data name="GenericBackground" xml:space="preserve">
     <value>#FF171717</value>
-    <comment>Dark grey</comment>
+    <comment>Dark grey (not to be confused with Windows.UI.Colors.DarkGray)</comment>
+  </data>
+  <data name="GenericButtonBackground" xml:space="preserve">
+    <value>#FF808080</value>
+    <comment>Windows.UI.Colors.Gray</comment>
   </data>
   <data name="GenericForeground" xml:space="preserve">
     <value>#FFFFDAB9</value>
