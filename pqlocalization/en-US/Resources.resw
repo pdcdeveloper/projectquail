@@ -120,4 +120,72 @@
   <data name="Greeting" xml:space="preserve">
     <value>Hello, World!</value>
   </data>
+  <data name="Notifications.Downloader.Canceled" xml:space="preserve">
+    <value>Download was canceled by user.</value>
+  </data>
+  <data name="Notifications.Downloader.HardError" xml:space="preserve">
+    <value>Either the download is restricted or the download url is invalid.</value>
+  </data>
+  <data name="Notifications.Downloader.InputError" xml:space="preserve">
+    <value>Unable to start download operation (missing parameters).</value>
+  </data>
+  <data name="Notifications.Downloader.QualityNoResults" xml:space="preserve">
+    <value>Unable to find download urls.</value>
+  </data>
+  <data name="Notifications.Downloader.QualityNotAvailable" xml:space="preserve">
+    <value>Quality selection is not available.</value>
+  </data>
+  <data name="Notifications.Downloader.Success" xml:space="preserve">
+    <value>Download complete!</value>
+  </data>
+  <data name="ToolTips.Download.OptionsAll" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ToolTips.Downloader.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ToolTips.Downloader.CancelAll" xml:space="preserve">
+    <value>Cancel all</value>
+  </data>
+  <data name="ToolTips.Downloader.Clear" xml:space="preserve">
+    <value>Remove</value>
+    <comment>Should only be available after cancel.</comment>
+  </data>
+  <data name="ToolTips.Downloader.ClearAll" xml:space="preserve">
+    <value>Remove completed and inactive operations</value>
+  </data>
+  <data name="ToolTips.Downloader.Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="ToolTips.Downloader.DownloadAll" xml:space="preserve">
+    <value>Download all inactive operations</value>
+  </data>
+  <data name="ToolTips.Downloader.DownloadFilePickerOff" xml:space="preserve">
+    <value>Using Downloads folder</value>
+  </data>
+  <data name="ToolTips.Downloader.DownloadFilePickerOn" xml:space="preserve">
+    <value>Always ask for download save location</value>
+  </data>
+  <data name="ToolTips.Downloader.Options" xml:space="preserve">
+    <value>Options</value>
+    <comment>"More" button</comment>
+  </data>
+  <data name="ToolTips.Downloader.Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="ToolTips.Downloader.PauseAll" xml:space="preserve">
+    <value>Pause all currently running downloads</value>
+  </data>
+  <data name="ToolTips.Downloader.QualitySelect" xml:space="preserve">
+    <value>Select download quality</value>
+  </data>
+  <data name="ToolTips.Downloader.QualitySelectAll" xml:space="preserve">
+    <value>Selects the download quality when using the Download All button for downloads whose quality is not explicity set</value>
+  </data>
+  <data name="ToolTips.Downloader.Resume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="ToolTips.Downloader.ResumeAll" xml:space="preserve">
+    <value>Resume all paused downloads</value>
+  </data>
 </root>
