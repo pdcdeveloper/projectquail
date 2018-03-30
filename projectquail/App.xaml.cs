@@ -30,7 +30,7 @@ namespace projectquail
 
         public const string ContactInfoPath = @"ms-appx:///ContactInfo.json";
         public const string PrivacyStatementPath = @"ms-appx:///PrivacyStatement.json";
-        public const string VersioningInfoPath = @"ms-appx:///VersioningInfo.json";
+        public const string AppVersionInfoPath = @"ms-appx:///AppVersionInfo.json";
 
         IAppUpdater _appUpdater;
 
