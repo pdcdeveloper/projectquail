@@ -1,0 +1,87 @@
+﻿{
+  "AppName": "QuailTube",
+
+  "DevelopmentTeam": "",
+
+  "CurrentVersion": {
+    "Version": "4.2.0.0",
+    "PublishedAt": "March 29, 2018",
+    "Changes": [
+      {
+        "Description": "Quick description of the change.",
+        "Details": [
+          "Extraneous details.",
+          "More details."
+        ]
+      },
+
+      {
+        "Description": "Description for another change.",
+        "Details": [
+          "Details for the other change."
+        ]
+      },
+
+      {
+        "Description": "Another change.",
+        "Details": []
+      }
+    ]
+  },
+
+  "PreviousVersions": [
+    {
+      "Version": "4.1.2.0",
+      "PublishedAt": "March 28, 2018",
+      "Changes": [
+        {
+          "Description": "Quick description for a previous change.",
+          "Details": [
+            "Details.",
+            "More details.",
+            "Even more details."
+          ]
+        }
+      ]
+    },
+
+    {
+      "Version": "4.0.0.0",
+      "PublishedAt": "March 27, 2018",
+      "Changes": [
+        {
+          "Description": "Description.",
+          "Details": [
+            "Details."
+          ]
+        },
+
+        {
+          "Description": "Another change.  No details.",
+          "Details": []
+        },
+
+        {
+          "Description": "More changes.",
+          "Details": []
+        },
+
+        {
+          "Description": "More changes.",
+          "Details": [
+            "Extraneous.",
+            "Details."
+          ]
+        },
+
+        {
+          "Description": "Change with empty string for details.",
+          "Details": [
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+
+}

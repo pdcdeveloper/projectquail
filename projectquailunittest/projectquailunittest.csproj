@@ -95,6 +95,7 @@
     <SDKReference Include="TestPlatform.Universal, Version=$(UnitTestPlatformVersion)" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppVersionInfoUnitTest.cs" />
     <Compile Include="ColorsUnitTest.cs" />
     <Compile Include="HexTo32bitColorUnitTest.cs" />
     <Compile Include="I18nRegionsUnitTest.cs" />
@@ -118,6 +119,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="projectquailunittest_TemporaryKey.pfx" />
+    <Content Include="TestAppVersionInfo.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\UnitTestApp.rd.xml" />
@@ -175,6 +177,11 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TestAppVersionInfo_1json__JSONSchema="http://json.schemastore.org/apple-app-site-association" />
+    </VisualStudio>
+  </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
