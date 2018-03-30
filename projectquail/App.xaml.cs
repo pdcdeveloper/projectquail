@@ -28,6 +28,10 @@ namespace projectquail
     {
         public const string InvalidFileNameCharacters = @"[\x5C\/:*?\x22<\>|]";
 
+        public const string ContactInfoPath = @"ms-appx:///ContactInfo.json";
+        public const string PrivacyStatementPath = @"ms-appx:///PrivacyStatement.json";
+        public const string VersioningInfoPath = @"ms-appx:///VersioningInfo.json";
+
         IAppUpdater _appUpdater;
 
         /// <summary>
