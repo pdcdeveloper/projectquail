@@ -107,6 +107,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Models\AppVersionInfo.cs" />
+    <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\pqlocalization.rd.xml" />
   </ItemGroup>
