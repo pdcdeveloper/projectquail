@@ -8,7 +8,10 @@ namespace pqcommonui.Helpers
     public static class PrettyPrintExtension
     {
         const string Epoch = "January 1, 1970";
-        const string NoValueIndicator = "\xC4\xC4"; // double em dash
+        const string EnDash = "\x2013";
+        const string EmDash = "\x2014";
+        const string NonBreakingSpace = "\xA0";
+        const string NoValueIndicator = EmDash + NonBreakingSpace + EmDash;
         const string LongDateFormatPattern = "MMMM d, yyyy";
         const string CommaDelineatedPattern = "###,###,###,###";
         const string DotDelineatedPattern = "###.###.###.###";
@@ -34,9 +37,9 @@ namespace pqcommonui.Helpers
         //      Video.Statistics.LikeCount
         //      Video.Statistics.DislikeCount
         //      Video.Statistics.CommentCount
-        public static string DelineateNumber(this ulong? number)
+        public static string DelineatePositiveNumber(this ulong? number)
         {
-            if (!number.HasValue || number.Value == 0)
+            if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             return number.Value.ToString(SpaceDelineatedPattern);
         }
@@ -46,40 +49,40 @@ namespace pqcommonui.Helpers
         //      Comment.Snippet.LikeCount
         //      CommentThread.Snippet.TopLevelComment.Snippet.LikeCount
         //      CommentThread.Snippet.TotalReplyCount
-        public static string DelineateNumber(this long? number)
+        public static string DelineatePositiveNumber(this long? number)
         {
-            if (!number.HasValue || number.Value == 0)
+            if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             return number.Value.ToString(SpaceDelineatedPattern);
         }
 
-        public static string DelineateNumber(this uint? number)
+        public static string DelineatePositiveNumber(this uint? number)
         {
-            if (!number.HasValue || number.Value == 0)
+            if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
                 return number.Value.ToString(SpaceDelineatedPattern);
         }
 
-        public static string DelineateNumber(this int? number)
+        public static string DelineatePositiveNumber(this int? number)
         {
-            if (!number.HasValue || number.Value == 0)
+            if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
                 return number.Value.ToString(SpaceDelineatedPattern);
         }
 
-        public static string DelineateNumber(this ushort? number)
+        public static string DelineatePositiveNumber(this ushort? number)
         {
-            if (!number.HasValue || number.Value == 0)
+            if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
                 return number.Value.ToString(SpaceDelineatedPattern);
         }
 
-        public static string DelineateNumber(this short? number)
+        public static string DelineatePositiveNumber(this short? number)
         {
-            if (!number.HasValue || number.Value == 0)
+            if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
                 return number.Value.ToString(SpaceDelineatedPattern);
@@ -95,13 +98,11 @@ namespace pqcommonui.Helpers
         // Why are there so many typos?  I'm pretty sure I copy-pasta the comment straight from Google's YouTube api.
         public static string DecodeISO8601Duration(this string duration)
         {
-            if (string.IsNullOrEmpty(duration))
-                return @"\xC4\:\xC4";   // em dashes separated by a colon
+            // Regex could be interwoven with if statements to check the validity of each time value.  For another day...
+            if (string.IsNullOrEmpty(duration) || !Regex.Match(duration, @"(^PT\d{1,2}H$)|(^PT\d{1,2}M$)|(^PT\d{1,2}S$)|(^PT\d{1,2}H\d{1,2}M$)|(^PT\d{1,2}H\d{1,2}S$)|(^PT\d{1,2}M\d{1,2}S$)|(^PT\d{1,2}H\d{1,2}M\d{1,2}S$)", RegexOptions.IgnoreCase).Success)
+                return EmDash + ":" + EmDash;
 
-            if (!Regex.Match(duration, "PT.*").Success)
-                return @"\xC4\:\xC4";
-
-            TimeSpan time = XmlConvert.ToTimeSpan(duration);
+            TimeSpan time = XmlConvert.ToTimeSpan(duration.ToUpper());
             return ColonDelineatedTimeFormat(time);
         }
 
