@@ -106,7 +106,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AsciiCharacters.cs" />
+    <Compile Include="Characters\Ascii.cs" />
     <Compile Include="Helpers\HexTo32bitColor.cs" />
     <Compile Include="Helpers\PrettyPrintExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

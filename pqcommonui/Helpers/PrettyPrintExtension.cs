@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Xml;
-using static pqcommonui.AsciiCharacters;
+using static pqcommonui.Characters.Ascii;
 
 namespace pqcommonui.Helpers
 {

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace pqcommonui
+﻿namespace pqcommonui.Characters
 {
-    public static class AsciiCharacters
+    public static class Ascii
     {
         public const string EnDash = "\x2013";
         public const string EmDash = "\x2014";
