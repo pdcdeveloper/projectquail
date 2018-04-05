@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Xml;
+using static pqcommonui.AsciiCharacters;
 
 namespace pqcommonui.Helpers
 {
     // Provides glorified formatting for numbers returned by Google.Apis.YouTube.v3.
     public static class PrettyPrintExtension
     {
-        const string Epoch = "January 1, 1970";
-        const string EnDash = "\x2013";
-        const string EmDash = "\x2014";
-        const string NonBreakingSpace = "\xA0";
-        const string NoValueIndicator = EmDash + NonBreakingSpace + EmDash;
         const string LongDateFormatPattern = "MMMM d, yyyy";
         const string CommaDelineatedPattern = "###,###,###,###";
         const string DotDelineatedPattern = "###.###.###.###";

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace pqcommonui
 {
-    class AsciiCharacters
+    public static class AsciiCharacters
     {
+        public const string Epoch = "January 1, 1970";
+        public const string EnDash = "\x2013";
+        public const string EmDash = "\x2014";
+        public const string NonBreakingSpace = "\xA0";
+        public const string NoValueIndicator = EmDash + NonBreakingSpace + EmDash;
     }
 }
