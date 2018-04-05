@@ -8,10 +8,11 @@ namespace pqcommonui.Helpers
     // Provides glorified formatting for numbers returned by Google.Apis.YouTube.v3.
     public static class PrettyPrintExtension
     {
-        const string LongDateFormatPattern = "MMMM d, yyyy";
-        const string CommaDelineatedPattern = "###,###,###,###";
-        const string DotDelineatedPattern = "###.###.###.###";
-        const string SpaceDelineatedPattern = "### ### ### ###";
+        const string _epoch = "January 1, 1970";
+        const string _longDateFormatPattern = "MMMM d, yyyy";
+        const string _commaDelineatedPattern = "###,###,###,###";
+        const string _dotDelineatedPattern = "###.###.###.###";
+        const string _spaceDelineatedPattern = "### ### ### ###";
 
         // Duration format.
         public static string ColonDelineatedTimeFormat (this TimeSpan time)
@@ -37,7 +38,7 @@ namespace pqcommonui.Helpers
         {
             if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
-            return number.Value.ToString(SpaceDelineatedPattern);
+            return number.Value.ToString(_spaceDelineatedPattern);
         }
 
         // Use cases:
@@ -49,7 +50,7 @@ namespace pqcommonui.Helpers
         {
             if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
-            return number.Value.ToString(SpaceDelineatedPattern);
+            return number.Value.ToString(_spaceDelineatedPattern);
         }
 
         public static string DelineatePositiveNumber(this uint? number)
@@ -57,7 +58,7 @@ namespace pqcommonui.Helpers
             if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
-                return number.Value.ToString(SpaceDelineatedPattern);
+                return number.Value.ToString(_spaceDelineatedPattern);
         }
 
         public static string DelineatePositiveNumber(this int? number)
@@ -65,7 +66,7 @@ namespace pqcommonui.Helpers
             if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
-                return number.Value.ToString(SpaceDelineatedPattern);
+                return number.Value.ToString(_spaceDelineatedPattern);
         }
 
         public static string DelineatePositiveNumber(this ushort? number)
@@ -73,7 +74,7 @@ namespace pqcommonui.Helpers
             if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
-                return number.Value.ToString(SpaceDelineatedPattern);
+                return number.Value.ToString(_spaceDelineatedPattern);
         }
 
         public static string DelineatePositiveNumber(this short? number)
@@ -81,7 +82,7 @@ namespace pqcommonui.Helpers
             if (!number.HasValue || number.Value <= 0)
                 return NoValueIndicator;
             else
-                return number.Value.ToString(SpaceDelineatedPattern);
+                return number.Value.ToString(_spaceDelineatedPattern);
         }
 
         // Google.Apis.YouTube.v3.Data.VideoContentDetails
@@ -107,8 +108,8 @@ namespace pqcommonui.Helpers
         public static string LongDateFormat(this DateTime? date)
         {
             if (!date.HasValue)
-                return Epoch;
-            return date.Value.ToString(LongDateFormatPattern);
+                return _epoch;
+            return date.Value.ToString(_longDateFormatPattern);
         }
 
         public static DateTime? ParseDate(this string date)
