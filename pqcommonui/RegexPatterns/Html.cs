@@ -2,7 +2,7 @@
 {
     // <see cref="http://www.w3schools.com/"/>
     // <see cref="http://www.w3schools.com/tags/"/>
-    public static class HtmlPatterns
+    public static class Html
     {
         public const string BreakTag = @"<br />";
         public const string BreakTagAlternate = @"<br(|\s\x2F)>";
