@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pqytparser", "pqytparser\pq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projectquailunittest", "projectquailunittest\projectquailunittest.csproj", "{56188950-DF00-4F3B-A598-56FD6B9A15DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pqcommonregex", "pqcommonregex\pqcommonregex.csproj", "{40B78344-38C5-44C8-B2C1-40C0A5B37629}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pqreflection", "pqreflection\pqreflection.csproj", "{7EB211B5-DC0A-48C5-9657-6E1CE654DFCF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pqappstoreservices", "pqappstoreservices\pqappstoreservices.csproj", "{8AE13322-9FFA-44CA-9B3E-08B01CC03BA9}"
@@ -89,22 +87,6 @@ Global
 		{56188950-DF00-4F3B-A598-56FD6B9A15DD}.Release|x86.ActiveCfg = Release|x86
 		{56188950-DF00-4F3B-A598-56FD6B9A15DD}.Release|x86.Build.0 = Release|x86
 		{56188950-DF00-4F3B-A598-56FD6B9A15DD}.Release|x86.Deploy.0 = Release|x86
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|ARM.ActiveCfg = Debug|ARM
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|ARM.Build.0 = Debug|ARM
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|x64.ActiveCfg = Debug|x64
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|x64.Build.0 = Debug|x64
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|x86.ActiveCfg = Debug|x86
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Debug|x86.Build.0 = Debug|x86
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|ARM.ActiveCfg = Release|ARM
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|ARM.Build.0 = Release|ARM
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|x64.ActiveCfg = Release|x64
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|x64.Build.0 = Release|x64
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|x86.ActiveCfg = Release|x86
-		{40B78344-38C5-44C8-B2C1-40C0A5B37629}.Release|x86.Build.0 = Release|x86
 		{7EB211B5-DC0A-48C5-9657-6E1CE654DFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7EB211B5-DC0A-48C5-9657-6E1CE654DFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB211B5-DC0A-48C5-9657-6E1CE654DFCF}.Debug|ARM.ActiveCfg = Debug|ARM
