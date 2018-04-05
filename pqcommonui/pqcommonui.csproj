@@ -110,7 +110,7 @@
     <Compile Include="Helpers\HexTo32bitColor.cs" />
     <Compile Include="Helpers\PrettyPrintExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegexPatterns.cs" />
+    <Compile Include="Regex\HtmlPatterns.cs" />
     <Compile Include="Styles.xaml.cs">
       <DependentUpon>Styles.xaml</DependentUpon>
     </Compile>
