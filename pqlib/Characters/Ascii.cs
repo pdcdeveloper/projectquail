@@ -1,4 +1,4 @@
-﻿namespace pqcommonui.Characters
+﻿namespace pqlib.Characters
 {
     public static class Ascii
     {
