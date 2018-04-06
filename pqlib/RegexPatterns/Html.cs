@@ -1,4 +1,4 @@
-﻿namespace pqcommonui.RegexPatterns
+﻿namespace pqlib.RegexPatterns
 {
     // <see cref="http://www.w3schools.com/"/>
     // <see cref="http://www.w3schools.com/tags/"/>
